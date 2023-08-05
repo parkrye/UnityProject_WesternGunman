@@ -19,9 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed, walkSpeed, runSpeed, jumpPower, jumpHeight, mouseSensivity, maxFallSpeed;
 
     [SerializeField] Vector3 moveDir, moveVec, rotDir;
-    [SerializeField] bool isJump, isAttack, isRun, readyToAttack;
+    [SerializeField] bool isJump, isAttack, isRun, readyToAttack, isBattle;
 
     [SerializeField] bool haveControll;
+
+    public bool IsBattle { get { return isBattle; } set { isBattle = value; } }
 
     public void Initialize()
     {
@@ -146,7 +148,7 @@ public class PlayerController : MonoBehaviour
 
     void OnAttackInput(InputValue inputValue)
     {
-        if (nowWeapon > 0 && readyToAttack &&!isAttack && inputValue.isPressed)
+        if (isBattle && nowWeapon > 0 && readyToAttack &&!isAttack && inputValue.isPressed)
         {
             isAttack = true;
             animator.SetTrigger("Attack");

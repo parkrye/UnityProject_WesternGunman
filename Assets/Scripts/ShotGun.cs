@@ -9,28 +9,36 @@ public class ShotGun : Weapon
         GameObject fireSmoke = Instantiate(fireEffect, fireTransform.position, Quaternion.identity, fireTransform);
         Destroy(fireSmoke, 5f);
 
-        RaycastHit rayCastHit;
+        RaycastHit cameraRayCastHit, gunRayCastHit;
         for (int i = -1; i <= 1; i += 2)
         {
             for(int j = -1;  j <= 1; j += 2)
             {
-                if (Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward + (player.Cam.transform.up * i + player.Cam.transform.right * j) * 0.05f, out rayCastHit, range))
+                if (Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward + (player.Cam.transform.up * i + player.Cam.transform.right * j) * 0.05f, out cameraRayCastHit, range))
                 {
-                    IHitable hit = rayCastHit.collider.GetComponent<IHitable>();
-                    if (hit != null && (1 << rayCastHit.collider.gameObject.layer) == targetLayerMask.value)
+                    Vector3 shotDir = (cameraRayCastHit.point - transform.position).normalized;
+                    if (Physics.Raycast(transform.position, shotDir, out gunRayCastHit, range))
                     {
-                        hit.Hit(damage * 0.2f);
+                        IHitable hit = gunRayCastHit.collider.GetComponent<IHitable>();
+                        if (hit != null && (1 << gunRayCastHit.collider.gameObject.layer) == targetLayerMask.value)
+                        {
+                            hit.Hit(damage * 0.2f);
+                        }
                     }
                 }
             }
         }
 
-        if (Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward, out rayCastHit, range))
+        if (Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward, out cameraRayCastHit, range))
         {
-            IHitable hit = rayCastHit.collider.GetComponent<IHitable>();
-            if (hit != null && (1 << rayCastHit.collider.gameObject.layer) == targetLayerMask.value)
+            Vector3 shotDir = (cameraRayCastHit.point - transform.position).normalized;
+            if (Physics.Raycast(transform.position, shotDir, out gunRayCastHit, range))
             {
-                hit.Hit(damage * 0.2f);
+                IHitable hit = gunRayCastHit.collider.GetComponent<IHitable>();
+                if (hit != null && (1 << gunRayCastHit.collider.gameObject.layer) == targetLayerMask.value)
+                {
+                    hit.Hit(damage * 0.2f);
+                }
             }
         }
         fireSound.Play();
