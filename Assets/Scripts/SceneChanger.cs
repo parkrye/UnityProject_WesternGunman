@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject titleUI, gameUI;
     [SerializeField] CinemachineVirtualCamera titleCam, gameCam;
     [SerializeField] PlayerController playerController;
+    [SerializeField] PlayerDataManager playerDataManager;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class SceneChanger : MonoBehaviour
         }
 
         playerController.Initialize();
+        playerDataManager.Initialize();
         gameUI.SetActive(true);
     }
 }
