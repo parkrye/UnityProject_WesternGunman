@@ -9,6 +9,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera titleCam, gameCam;
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerDataManager playerDataManager;
+    [SerializeField] NPCInitializer npcInitializer;
 
     void Awake()
     {
@@ -40,6 +41,8 @@ public class SceneChanger : MonoBehaviour
 
         titleCam.Priority = 0;
         gameCam.Priority = 10;
+
+        npcInitializer.Initialize();
 
         Volume titleVolume = titleCam.GetComponent<Volume>();
         for(int i = 0; i < 10; i++)
