@@ -177,12 +177,14 @@ public class PlayerController : MonoBehaviour
 
     void OnInteractInput(InputValue inputValue)
     {
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position + transform.forward, 1f, transform.up);
-        foreach(RaycastHit hit in hits)
+        if(!inputValue.isPressed)
         {
-            IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-            interactable?.Interact();
-            return;
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position + transform.forward, 1f, transform.up);
+            foreach (RaycastHit hit in hits)
+            {
+                IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+                interactable?.Interact();
+            }
         }
     }
 
