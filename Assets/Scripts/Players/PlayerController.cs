@@ -181,7 +181,14 @@ public class PlayerController : MonoBehaviour
     {
         if(!inputValue.isPressed)
         {
-            RaycastHit[] hits = Physics.SphereCastAll(transform.position + transform.forward, 1f, transform.up);
+            RaycastHit cameraRayCastHit;
+            Vector3 shotDir;
+            if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out cameraRayCastHit, 100f))
+                shotDir = (cameraRayCastHit.point - transform.position).normalized;
+            else
+                shotDir = transform.forward;
+
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position + shotDir, 1f, transform.up);
             foreach (RaycastHit hit in hits)
             {
                 IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();

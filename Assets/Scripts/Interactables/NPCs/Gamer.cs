@@ -16,7 +16,6 @@ public class Gamer : NPC
 
     public override void Interact()
     {
-        Debug.Log($"Interact with {name}");
         StopAllCoroutines();
         talkClouds.SetText(talks[Random.Range(0, talks.Count)]);
         talkClouds.gameObject.SetActive(true);
