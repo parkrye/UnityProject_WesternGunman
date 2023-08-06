@@ -4,7 +4,10 @@ using UnityEngine.Events;
 public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 {
     [SerializeField] float nowLife, maxLife;
+    [SerializeField] int money;
+    public int Money { get { return money; } set { money = value; moneyEvent?.Invoke(money); } }
     UnityEvent<(float, float)> lifeEvent;
+    UnityEvent<float> moneyEvent;
 
     public void Initialize()
     {
@@ -44,5 +47,15 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
     public void RemoveLifeEventListener(UnityAction<(float, float)> listener)
     {
         lifeEvent.RemoveListener(listener);
+    }
+
+    public void AddMoneyEventListener(UnityAction<float> listener)
+    {
+        moneyEvent.AddListener(listener);
+    }
+
+    public void RemoveMoneyEventListener(UnityAction<float> listener)
+    {
+        moneyEvent.RemoveListener(listener);
     }
 }
