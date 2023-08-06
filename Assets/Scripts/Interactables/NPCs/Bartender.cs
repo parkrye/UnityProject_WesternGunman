@@ -14,9 +14,6 @@ public class Bartender : NPC
 
     public override void Interact()
     {
-        StopAllCoroutines();
-        talkClouds.SetText(talks[Random.Range(0, talks.Count)]);
-        talkClouds.gameObject.SetActive(true);
-        StartCoroutine(TalkRoutine());
+
     }
 }

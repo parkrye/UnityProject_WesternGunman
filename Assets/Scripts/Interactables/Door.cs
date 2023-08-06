@@ -13,6 +13,7 @@ public class Door : MonoBehaviour, IInteractable
 
     IEnumerator DoorRoutine()
     {
+        GetComponent<Collider>().enabled = false;
         if (isOnpen)
         {
             isOnpen = false;
@@ -37,5 +38,6 @@ public class Door : MonoBehaviour, IInteractable
                 yield return new WaitForSeconds(0.0125f);
             }
         }
+        GetComponent<Collider>().enabled = true;
     }
 }

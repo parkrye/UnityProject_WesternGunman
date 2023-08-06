@@ -13,12 +13,4 @@ public class Gamer : NPC
         talks.Add("Actually Good");
         talks.Add("Come on...!");
     }
-
-    public override void Interact()
-    {
-        StopAllCoroutines();
-        talkClouds.SetText(talks[Random.Range(0, talks.Count)]);
-        talkClouds.gameObject.SetActive(true);
-        StartCoroutine(TalkRoutine());
-    }
 }

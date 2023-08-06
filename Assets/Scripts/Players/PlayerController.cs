@@ -197,6 +197,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTalkInput(InputValue inputValue)
+    {
+        if (!inputValue.isPressed)
+        {
+            RaycastHit cameraRayCastHit;
+            Vector3 shotDir;
+            if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out cameraRayCastHit, 100f))
+                shotDir = (cameraRayCastHit.point - transform.position).normalized;
+            else
+                shotDir = transform.forward;
+
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position + shotDir, 1f, transform.up);
+            foreach (RaycastHit hit in hits)
+            {
+                ITalkable talkable = hit.collider.gameObject.GetComponent<ITalkable>();
+                talkable?.Talk();
+            }
+        }
+    }
+
     void OnMouseMoveInput(InputValue inputValue)
     {
         Vector2 tmpDir = inputValue.Get<Vector2>();

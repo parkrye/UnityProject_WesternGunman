@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPC : MonoBehaviour, IInteractable
+public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
 {
     [SerializeField] protected GameObject worldCanvas;
     [SerializeField] protected TalkUI talkClouds;
@@ -27,7 +27,18 @@ public abstract class NPC : MonoBehaviour, IInteractable
         talks = new List<string>();
     }
 
-    public abstract void Interact();
+    public virtual void Interact()
+    {
+
+    }
+
+    public void Talk()
+    {
+        StopAllCoroutines();
+        talkClouds.SetText(talks[Random.Range(0, talks.Count)]);
+        talkClouds.gameObject.SetActive(true);
+        StartCoroutine(TalkRoutine());
+    }
 
     protected IEnumerator TalkRoutine()
     {
