@@ -14,8 +14,10 @@ public class Merchant : NPC
         talks.Add("Have you Seen My Husband?");
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController playerController)
     {
-
+        base.Interact(playerController);
+        player.ControllOut();
+        player.HideUI();
     }
 }

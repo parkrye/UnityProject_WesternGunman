@@ -9,12 +9,12 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Transform fireTransform;
     [SerializeField] protected LayerMask targetLayerMask;
 
-    [SerializeField] protected float damage, speed, range;
+    [SerializeField] protected WeaponData weaponData;
 
     public float Attack()
     {
         StartCoroutine(AttackRoutine());
-        return speed;
+        return weaponData.Speed;
     }
 
     protected abstract IEnumerator AttackRoutine();

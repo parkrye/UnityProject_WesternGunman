@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GameObject dot;
     [SerializeField] GameObject cam;
+    [SerializeField] GameObject gameUI;
     public GameObject Cam { get { return cam; } }
 
     [SerializeField] Transform lookAtPoint;
@@ -192,7 +193,7 @@ public class PlayerController : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-                interactable?.Interact();
+                interactable?.Interact(this);
             }
         }
     }
@@ -268,5 +269,25 @@ public class PlayerController : MonoBehaviour
             }
             animator.SetFloat("Weapon", nowWeapon * 0.5f);
         }
+    }
+
+    public void ControllOut()
+    {
+        haveControll = false;
+    }
+
+    public void ControllIn()
+    {
+        haveControll = true;
+    }
+
+    public void HideUI()
+    {
+        gameUI.SetActive(false);
+    }
+
+    public void ShowUI()
+    {
+        gameUI.SetActive(true);
     }
 }

@@ -14,8 +14,10 @@ public class Nun : NPC
         talks.Add("Do You Want to Pray?");
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController playerController)
     {
-
+        base.Interact(playerController);
+        player.ControllOut();
+        player.HideUI();
     }
 }

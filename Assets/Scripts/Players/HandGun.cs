@@ -9,15 +9,15 @@ public class HandGun : Weapon
         GameObject fireSmoke = Instantiate(fireEffect, fireTransform.position, Quaternion.identity, fireTransform);
         Destroy(fireSmoke, 5f);
         RaycastHit cameraRayCastHit, gunRayCastHit;
-        if(Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward, out cameraRayCastHit, range))
+        if(Physics.Raycast(player.Cam.transform.position, player.Cam.transform.forward, out cameraRayCastHit, weaponData.Range))
         {
             Vector3 shotDir = (cameraRayCastHit.point - transform.position).normalized;
-            if (Physics.Raycast(transform.position, shotDir, out gunRayCastHit, range))
+            if (Physics.Raycast(transform.position, shotDir, out gunRayCastHit, weaponData.Range))
             {
                 IHitable hit = gunRayCastHit.collider.GetComponent<IHitable>();
                 if (hit != null && (1 << gunRayCastHit.collider.gameObject.layer) == targetLayerMask.value)
                 {
-                    hit.Hit(damage);
+                    hit.Hit(weaponData.Damage);
                 }
             }
         }

@@ -73,6 +73,7 @@ MonoBehaviour:
   animator: {fileID: 3320031332484233290}
   dot: {fileID: 0}
   cam: {fileID: 0}
+  gameUI: {fileID: 0}
   lookAtPoint: {fileID: 6928459112588088080}
   weapons:
   - {fileID: 0}
@@ -849,9 +850,7 @@ MonoBehaviour:
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  damage: 2
-  speed: 2
-  range: 150
+  weaponData: {fileID: 11400000, guid: d004ef4880ffdb6478d75aa5a2b6439a, type: 2}
 --- !u!1001 &9138997544326617753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,6 +1068,4 @@ MonoBehaviour:
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  damage: 5
-  speed: 5
-  range: 250
+  weaponData: {fileID: 11400000, guid: 6c96c41545a453a4eb54c5ae2d2e5850, type: 2}

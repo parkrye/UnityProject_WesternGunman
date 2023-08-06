@@ -12,8 +12,10 @@ public class Bartender : NPC
         talks.Add("How about Beer?");
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController playerController)
     {
-
+        base.Interact(playerController);
+        player.ControllOut();
+        player.HideUI();
     }
 }

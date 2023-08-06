@@ -14,8 +14,10 @@ public class UnderTaker : NPC
         talks.Add("Close...That...Door...");
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController playerController)
     {
-
+        base.Interact(playerController);
+        player.ControllOut();
+        player.HideUI();
     }
 }

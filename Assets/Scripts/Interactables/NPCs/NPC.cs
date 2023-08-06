@@ -7,6 +7,8 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
     [SerializeField] protected GameObject worldCanvas;
     [SerializeField] protected TalkUI talkClouds;
     [SerializeField] List<GameObject> avatars;
+    [SerializeField] protected PlayerController player;
+    [SerializeField] protected GameObject interactUI;
 
     [SerializeField] int avatarNum;
     [SerializeField] float remainTime;
@@ -29,9 +31,17 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
         prevRotation = transform.localEulerAngles;
     }
 
-    public virtual void Interact()
+    public virtual void Interact(PlayerController playerController)
     {
+        player = playerController;
+    }
 
+    public void EndInteract()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        interactUI.SetActive(false);
+        player.ControllIn();
+        player.ShowUI();
     }
 
     public virtual void Talk(Transform talker)

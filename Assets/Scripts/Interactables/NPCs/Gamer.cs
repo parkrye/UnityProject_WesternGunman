@@ -21,4 +21,9 @@ public class Gamer : NPC
         talkClouds.gameObject.SetActive(true);
         StartCoroutine(TalkRoutine());
     }
+
+    public override void Interact(PlayerController playerController)
+    {
+        base.Interact(playerController);
+    }
 }

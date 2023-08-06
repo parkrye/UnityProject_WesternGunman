@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dealer : NPC
 {
+
     public override void Initialize()
     {
         base.Initialize();
@@ -14,9 +15,13 @@ public class Dealer : NPC
         talks.Add("Of Course You Have Enough Money?");
     }
 
-    public override void Interact()
+    public override void Interact(PlayerController playerController)
     {
-
+        base.Interact(playerController);
+        player.ControllOut();
+        player.HideUI();
+        interactUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }
 
