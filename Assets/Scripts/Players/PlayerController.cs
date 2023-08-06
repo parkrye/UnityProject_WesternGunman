@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 ITalkable talkable = hit.collider.gameObject.GetComponent<ITalkable>();
-                talkable?.Talk();
+                talkable?.Talk(transform);
             }
         }
     }

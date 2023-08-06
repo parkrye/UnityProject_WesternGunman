@@ -2567,7 +2567,7 @@ MonoBehaviour:
   - {fileID: 1195460164518758}
   - {fileID: 1420411842764852}
   avatarNum: -1
-  remainTime: 3
+  remainTime: 2
   talks: []
 --- !u!54 &2503965281979869344
 Rigidbody:

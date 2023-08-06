@@ -477,7 +477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4352416686892708
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4212525653903956
 Transform:
   m_ObjectHideFlags: 0
@@ -2487,11 +2487,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4517892917420314}
   - component: {fileID: 95918252503098470}
-  - component: {fileID: 7636560685570073559}
+  - component: {fileID: 6730308907523690734}
   - component: {fileID: 2503965281979869344}
   - component: {fileID: 7458003668138478763}
   m_Layer: 9
-  m_Name: NPC_Bartender
+  m_Name: NPC_Merchant
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2543,7 +2543,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7636560685570073559
+--- !u!114 &6730308907523690734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2552,7 +2552,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942289980213182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed61bc0b100c294e8ec54e1dd37998c, type: 3}
+  m_Script: {fileID: 11500000, guid: 15091ae3bb3b6be4eaa09c3f1ffa31e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   worldCanvas: {fileID: 2692907498258967142}
@@ -2566,10 +2566,9 @@ MonoBehaviour:
   - {fileID: 1926068621951506}
   - {fileID: 1195460164518758}
   - {fileID: 1420411842764852}
-  avatarNum: 7
-  remainTime: 3
+  avatarNum: 6
+  remainTime: 4
   talks: []
-  prevRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &2503965281979869344
 Rigidbody:
   m_ObjectHideFlags: 0

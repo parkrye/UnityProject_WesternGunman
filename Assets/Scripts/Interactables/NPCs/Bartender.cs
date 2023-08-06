@@ -6,9 +6,9 @@ public class Bartender : NPC
     {
         base.Initialize();
         talks.Add("Good Morning Ya");
-        talks.Add("Need Some Liquor?");
+        talks.Add("Need Some Liquor? or Milk?");
         talks.Add("Fancy a drink?");
-        talks.Add("Yo Piece Maker!");
+        talks.Add("Yo Our PieceMaker!");
         talks.Add("How about Beer?");
     }
 

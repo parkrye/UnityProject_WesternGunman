@@ -10,7 +10,7 @@ public class Dealer : NPC
         talks.Add("You Got a Gun?");
         talks.Add("How about Bigger One?");
         talks.Add("Ah, Good Smell");
-        talks.Add("Bigger is Better!");
+        talks.Add("Bigger is Better! And Biggest is Best!");
         talks.Add("Of Course You Have Enough Money?");
     }
 

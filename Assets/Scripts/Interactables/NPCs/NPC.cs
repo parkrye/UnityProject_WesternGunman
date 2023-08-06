@@ -11,6 +11,7 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
     [SerializeField] int avatarNum;
     [SerializeField] float remainTime;
     [SerializeField] protected List<string> talks;
+    [SerializeField] Vector3 prevRotation;
 
     public virtual void Initialize()
     {
@@ -25,6 +26,7 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
         }
 
         talks = new List<string>();
+        prevRotation = transform.localEulerAngles;
     }
 
     public virtual void Interact()
@@ -32,9 +34,10 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
 
     }
 
-    public void Talk()
+    public virtual void Talk(Transform talker)
     {
         StopAllCoroutines();
+        transform.LookAt(new Vector3(talker.position.x, transform.position.y, talker.position.z));
         talkClouds.SetText(talks[Random.Range(0, talks.Count)]);
         talkClouds.gameObject.SetActive(true);
         StartCoroutine(TalkRoutine());
@@ -44,5 +47,6 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
     {
         yield return new WaitForSeconds(remainTime);
         talkClouds.gameObject.SetActive(false);
+        transform.localEulerAngles = prevRotation;
     }
 }
