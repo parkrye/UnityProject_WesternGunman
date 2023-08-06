@@ -79,9 +79,9 @@ MonoBehaviour:
   - {fileID: 4412888748409041989}
   - {fileID: 2873711832965810921}
   nowWeapon: 0
-  moveSpeed: 10
-  walkSpeed: 10
-  runSpeed: 15
+  moveSpeed: 5
+  walkSpeed: 5
+  runSpeed: 10
   jumpPower: 1
   jumpHeight: 0.2
   mouseSensivity: 0.5
@@ -93,6 +93,7 @@ MonoBehaviour:
   isAttack: 0
   isRun: 0
   readyToAttack: 0
+  isBattle: 0
   haveControll: 0
 --- !u!114 &7173856460226497832
 MonoBehaviour:
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowLife: 100
   maxLife: 100
+  money: 0
 --- !u!114 &3676150969155552557
 MonoBehaviour:
   m_ObjectHideFlags: 0
