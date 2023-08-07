@@ -5,23 +5,39 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 {
     [SerializeField] PlayerData playerData;
     public int Money { get { return playerData.Money; } set { playerData.Money = value; moneyEvent?.Invoke(playerData.Money); } }
-    UnityEvent<(float, float)> lifeEvent;
+
+    UnityEvent<(float, float)> lifeEvent, armorEvent;
     UnityEvent<int> moneyEvent;
 
     public void Initialize()
     {
         lifeEvent = new UnityEvent<(float, float)>();
         moneyEvent = new UnityEvent<int>();
+        armorEvent = new UnityEvent<(float, float)>();
     }
 
     public void Hit(float damage)
     {
-        playerData.NowLife -= damage;
+        if(playerData.NowArmor > 0f)
+            playerData.NowArmor -= damage;
+
+        if(playerData.NowArmor < 0f)
+        {
+            playerData.NowLife += playerData.NowArmor;
+            playerData.NowArmor = 0f;
+        }
+        else
+        {
+            playerData.NowLife -= damage;
+        }
+
         if(playerData.NowLife < 0)
         {
             playerData.NowLife = 0;
         }
+
         lifeEvent.Invoke((playerData.NowLife, playerData.MaxLife));
+        armorEvent?.Invoke((playerData.NowArmor, playerData.MaxArmor));
     }
 
     public void Dead()
@@ -37,6 +53,20 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
             playerData.NowLife = playerData.MaxLife;
         }
         lifeEvent.Invoke((playerData.NowLife, playerData.MaxLife));
+    }
+
+    public void AddArmor(float nowArmorModifier, float maxArmorModifier)
+    {
+        playerData.MaxArmor += maxArmorModifier;
+        playerData.NowArmor += nowArmorModifier;
+        if(playerData.NowArmor > playerData.MaxArmor)
+            playerData.NowArmor = playerData.MaxArmor;
+        armorEvent?.Invoke((playerData.NowArmor, playerData.MaxArmor));
+    }
+
+    public (float, float) GetArmor()
+    {
+        return (playerData.NowArmor, playerData.MaxArmor);
     }
 
     public void AddLifeEventListener(UnityAction<(float, float)> listener)
@@ -57,5 +87,15 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
     public void RemoveMoneyEventListener(UnityAction<int> listener)
     {
         moneyEvent.RemoveListener(listener);
+    }
+
+    public void AddArmorEventListener(UnityAction<(float, float)> listener)
+    {
+        armorEvent.AddListener(listener);
+    }
+
+    public void RemoveArmorEventListener(UnityAction<(float, float)> listener)
+    {
+        armorEvent.RemoveListener(listener);
     }
 }

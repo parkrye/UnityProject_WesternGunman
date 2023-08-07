@@ -8,11 +8,13 @@ public class GameUI : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Image lifeImage;
     [SerializeField] TMP_Text moneyText;
+    [SerializeField] Slider armorSlider;
 
     public void Initialize(PlayerDataManager playerDataManager)
     {
         playerDataManager.AddLifeEventListener(ModifyLife);
         playerDataManager.AddMoneyEventListener(ModifyMoney);
+        playerDataManager.AddArmorEventListener(ModifyArmor);
     }
 
     void ModifyLife((float, float) life)
@@ -23,6 +25,12 @@ public class GameUI : MonoBehaviour
     void ModifyMoney(int money)
     {
         moneyText.text = $"${money}";
+    }
+
+    void ModifyArmor((float, float) armor)
+    {
+        armorSlider.maxValue = armor.Item2;
+        armorSlider.value = armor.Item1;
     }
 
     void OnTabInput(InputValue inputValue)
