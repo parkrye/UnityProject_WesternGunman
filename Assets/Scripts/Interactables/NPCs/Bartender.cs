@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Bartender : NPC
 {
-    public override void Initialize()
+    public override void Initialize(PlayerController _player)
     {
-        base.Initialize();
+        base.Initialize(_player);
         talks.Add("Good Morning Ya");
         talks.Add("Need Some Liquor? or Milk?");
         talks.Add("Fancy a drink?");
@@ -12,10 +12,10 @@ public class Bartender : NPC
         talks.Add("How about Beer?");
     }
 
-    public override void Interact(PlayerController playerController)
+    public override void Interact()
     {
-        base.Interact(playerController);
-        player.ControllOut();
-        player.HideUI();
+        base.Interact();
+        playerController.ControllOut();
+        playerController.HideUI();
     }
 }

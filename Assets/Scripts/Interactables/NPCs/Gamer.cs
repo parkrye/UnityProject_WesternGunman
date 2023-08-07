@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Gamer : NPC
 {
-    public override void Initialize()
+    public override void Initialize(PlayerController _player)
     {
-        base.Initialize();
+        base.Initialize(_player);
         talks.Add("Hmmm...");
         talks.Add("Wait, Wait. Don't Get in the Way");
         talks.Add("It's not Bad");
@@ -22,8 +22,8 @@ public class Gamer : NPC
         StartCoroutine(TalkRoutine());
     }
 
-    public override void Interact(PlayerController playerController)
+    public override void Interact()
     {
-        base.Interact(playerController);
+        base.Interact();
     }
 }

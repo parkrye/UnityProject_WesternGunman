@@ -5,11 +5,11 @@ public class NPCInitializer : MonoBehaviour
 {
     [SerializeField] List<NPC> npcs;
 
-    public void Initialize()
+    public void Initialize(PlayerController player)
     {
         for(int i = 0; i < npcs.Count; i++)
         {
-            npcs[i].Initialize();
+            npcs[i].Initialize(player);
         }
     }
 }

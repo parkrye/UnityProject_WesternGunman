@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Nun : NPC
 {
-    public override void Initialize()
+    public override void Initialize(PlayerController _player)
     {
-        base.Initialize();
+        base.Initialize(_player);
         talks.Add("Pastor Went to a Neighboring Town");
         talks.Add("What Brings You Here?");
         talks.Add("Me? I'm a Nun! Even If It's Like This...");
@@ -14,10 +14,10 @@ public class Nun : NPC
         talks.Add("Do You Want to Pray?");
     }
 
-    public override void Interact(PlayerController playerController)
+    public override void Interact()
     {
-        base.Interact(playerController);
-        player.ControllOut();
-        player.HideUI();
+        base.Interact();
+        playerController.ControllOut();
+        playerController.HideUI();
     }
 }

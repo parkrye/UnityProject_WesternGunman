@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-                interactable?.Interact(this);
+                interactable?.Interact();
             }
         }
     }

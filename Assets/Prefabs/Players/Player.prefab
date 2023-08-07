@@ -108,9 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b589ca2f0c548df45891da09173aad50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowLife: 100
-  maxLife: 100
-  money: 0
+  playerData: {fileID: 11400000, guid: 57fd56a5241d63f41a68f015e444b1ec, type: 2}
 --- !u!114 &3676150969155552557
 MonoBehaviour:
   m_ObjectHideFlags: 0

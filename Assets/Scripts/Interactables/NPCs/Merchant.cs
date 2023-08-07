@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Merchant : NPC
 {
-    public override void Initialize()
+    public override void Initialize(PlayerController _player)
     {
-        base.Initialize();
+        base.Initialize(_player);
         talks.Add("It's a Nice Day!");
         talks.Add("Today I Recommend...Apple. Look!");
         talks.Add("This Sweetroll is My Masterpiece!");
@@ -14,10 +14,10 @@ public class Merchant : NPC
         talks.Add("Have you Seen My Husband?");
     }
 
-    public override void Interact(PlayerController playerController)
+    public override void Interact()
     {
-        base.Interact(playerController);
-        player.ControllOut();
-        player.HideUI();
+        base.Interact();
+        playerController.ControllOut();
+        playerController.HideUI();
     }
 }

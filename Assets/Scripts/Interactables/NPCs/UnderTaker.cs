@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UnderTaker : NPC
 {
-    public override void Initialize()
+    public override void Initialize(PlayerController _player)
     {
-        base.Initialize();
+        base.Initialize(_player);
         talks.Add("You...Need...Something...?");
         talks.Add("... ... ...");
         talks.Add("Be...Quiet...");
@@ -14,10 +14,10 @@ public class UnderTaker : NPC
         talks.Add("Close...That...Door...");
     }
 
-    public override void Interact(PlayerController playerController)
+    public override void Interact()
     {
-        base.Interact(playerController);
-        player.ControllOut();
-        player.HideUI();
+        base.Interact();
+        playerController.ControllOut();
+        playerController.HideUI();
     }
 }

@@ -6,7 +6,7 @@ public class Door : MonoBehaviour, IInteractable, ILockable
     [SerializeField] bool isOnpen, isLeft, isLocked;
     [SerializeField] float openDegree;
 
-    public void Interact(PlayerController playerController)
+    public void Interact()
     {
         StartCoroutine(DoorRoutine());
     }

@@ -20,7 +20,7 @@ public class GameUI : MonoBehaviour
         lifeImage.fillAmount = (life.Item1 / life.Item2 );
     }
 
-    void ModifyMoney(float money)
+    void ModifyMoney(int money)
     {
         moneyText.text = $"${money}";
     }

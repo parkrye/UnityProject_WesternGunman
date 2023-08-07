@@ -5,7 +5,8 @@ using UnityEngine.Rendering;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] GameObject titleUI, gameUI;
+    [SerializeField] GameObject titleUI;
+    [SerializeField] GameUI gameUI;
     [SerializeField] CinemachineVirtualCamera titleCam, gameCam;
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerDataManager playerDataManager;
@@ -14,7 +15,7 @@ public class SceneChanger : MonoBehaviour
     void Awake()
     {
         titleUI.SetActive(true);
-        gameUI.SetActive(false);
+        gameUI.gameObject.SetActive(false);
     }
 
     public void OnStartButton()
@@ -42,7 +43,7 @@ public class SceneChanger : MonoBehaviour
         titleCam.Priority = 0;
         gameCam.Priority = 10;
 
-        npcInitializer.Initialize();
+        npcInitializer.Initialize(playerController);
 
         Volume titleVolume = titleCam.GetComponent<Volume>();
         for(int i = 0; i < 10; i++)
@@ -53,6 +54,7 @@ public class SceneChanger : MonoBehaviour
 
         playerController.Initialize();
         playerDataManager.Initialize();
-        gameUI.SetActive(true);
+        gameUI.Initialize(playerDataManager);
+        gameUI.gameObject.SetActive(true);
     }
 }

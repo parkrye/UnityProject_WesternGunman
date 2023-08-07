@@ -7,7 +7,7 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
     [SerializeField] protected GameObject worldCanvas;
     [SerializeField] protected TalkUI talkClouds;
     [SerializeField] List<GameObject> avatars;
-    [SerializeField] protected PlayerController player;
+    [SerializeField] protected PlayerController playerController;
     [SerializeField] protected GameObject interactUI;
 
     [SerializeField] int avatarNum;
@@ -15,9 +15,10 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
     [SerializeField] protected List<string> talks;
     [SerializeField] Vector3 prevRotation;
 
-    public virtual void Initialize()
+    public virtual void Initialize(PlayerController _player)
     {
-        if(avatarNum < 0)
+        playerController = _player;
+        if (avatarNum < 0)
             avatarNum = Random.Range(0, avatars.Count);
         for (int i = 0; i < avatars.Count; i++)
         {
@@ -31,17 +32,17 @@ public abstract class NPC : MonoBehaviour, IInteractable, ITalkable
         prevRotation = transform.localEulerAngles;
     }
 
-    public virtual void Interact(PlayerController playerController)
+    public virtual void Interact()
     {
-        player = playerController;
+
     }
 
     public void EndInteract()
     {
         Cursor.lockState = CursorLockMode.Locked;
         interactUI.SetActive(false);
-        player.ControllIn();
-        player.ShowUI();
+        playerController.ControllIn();
+        playerController.ShowUI();
     }
 
     public virtual void Talk(Transform talker)

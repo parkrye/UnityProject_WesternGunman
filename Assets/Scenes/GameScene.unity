@@ -68479,7 +68479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleUI: {fileID: 714463169}
-  gameUI: {fileID: 1794650482}
+  gameUI: {fileID: 1794650484}
   titleCam: {fileID: 553812552}
   gameCam: {fileID: 1063184260}
   playerController: {fileID: 1240238086}
@@ -77814,7 +77814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1794650483
 RectTransform:
   m_ObjectHideFlags: 0

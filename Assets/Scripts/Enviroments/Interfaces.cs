@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void Interact(PlayerController playerController);
+    public void Interact();
 }
 
 public interface ITalkable
