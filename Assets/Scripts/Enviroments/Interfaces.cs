@@ -25,5 +25,5 @@ public interface IHitable
 
 public interface IHealable
 {
-    public void Heal(float heal);
+    public void Heal(float heal, float maxLife = 0f);
 }

@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnpen: 0
   isLeft: 1
-  isLocked: 0
+  isLocked: 1
   openDegree: 100
 --- !u!114 &26843478
 MonoBehaviour:
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnpen: 0
   isLeft: 0
-  isLocked: 0
+  isLocked: 1
   openDegree: 100
 --- !u!54 &26843482
 Rigidbody:
@@ -12645,6 +12645,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4276427947459946, guid: 0f5afd0a565c5644fb77d4600ba5d44a,
     type: 3}
   m_PrefabInstance: {fileID: 270740643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &271475783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1569905595}
+    m_Modifications:
+    - target: {fileID: 1942289980213182, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_Name
+      value: NPC_Nun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.089981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5490724
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -56.970196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea2973f79f656f6459f91291c61630e4, type: 3}
+--- !u!4 &271475784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4517892917420314, guid: ea2973f79f656f6459f91291c61630e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 271475783}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &272548791
 GameObject:
@@ -47401,6 +47464,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1131318267}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1131832379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2268128734996198044, guid: ea2973f79f656f6459f91291c61630e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 271475783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5745414ab35dd448867e038bf812d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1132467190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48255,7 +48330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnpen: 0
   isLeft: 1
-  isLocked: 0
+  isLocked: 1
   openDegree: 100
 --- !u!114 &1147499347
 MonoBehaviour:
@@ -48271,7 +48346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnpen: 0
   isLeft: 0
-  isLocked: 0
+  isLocked: 1
   openDegree: 100
 --- !u!54 &1147499351
 Rigidbody:
@@ -67419,6 +67494,7 @@ Transform:
   - {fileID: 2105029566}
   - {fileID: 1030799952}
   - {fileID: 388716105}
+  - {fileID: 271475784}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67441,6 +67517,7 @@ MonoBehaviour:
   - {fileID: 2105029564}
   - {fileID: 1030799950}
   - {fileID: 388716106}
+  - {fileID: 1131832379}
 --- !u!1001 &1570331725
 PrefabInstance:
   m_ObjectHideFlags: 0

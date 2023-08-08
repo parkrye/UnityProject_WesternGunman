@@ -2576,7 +2576,7 @@ MonoBehaviour:
   weaponDatas:
   - {fileID: 11400000, guid: d004ef4880ffdb6478d75aa5a2b6439a, type: 2}
   - {fileID: 11400000, guid: 6c96c41545a453a4eb54c5ae2d2e5850, type: 2}
-  uIBase: {fileID: 0}
+  uIBase: {fileID: 5564475777412286889}
   playerDataManager: {fileID: 0}
 --- !u!54 &2503965281979869344
 Rigidbody:

@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowLife: 100
   maxLife: 100
+  nowArmor: 0
+  maxArmor: 10
   money: 0
+  maxLifeCounter: 0
+  maxArmorCounter: 0

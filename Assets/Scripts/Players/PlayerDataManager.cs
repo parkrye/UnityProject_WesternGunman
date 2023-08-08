@@ -45,8 +45,9 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 
     }
 
-    public void Heal(float heal)
+    public void Heal(float heal, float maxLife = 0f)
     {
+        playerData.MaxLife += maxLife;
         playerData.NowLife += heal;
         if (playerData.NowLife > playerData.MaxLife)
         {
@@ -55,7 +56,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
         lifeEvent.Invoke((playerData.NowLife, playerData.MaxLife));
     }
 
-    public void AddArmor(float nowArmorModifier, float maxArmorModifier)
+    public void AddArmor(float nowArmorModifier, float maxArmorModifier = 0f)
     {
         playerData.MaxArmor += maxArmorModifier;
         playerData.NowArmor += nowArmorModifier;

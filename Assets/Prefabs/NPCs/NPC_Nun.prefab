@@ -2487,7 +2487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4517892917420314}
   - component: {fileID: 95918252503098470}
-  - component: {fileID: 6358255957642352395}
+  - component: {fileID: 2268128734996198044}
   - component: {fileID: 2503965281979869344}
   - component: {fileID: 7458003668138478763}
   m_Layer: 9
@@ -2532,7 +2532,7 @@ Animator:
   m_GameObject: {fileID: 1942289980213182}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4837235d67e136e4b883adb2bafc73e8, type: 3}
-  m_Controller: {fileID: 9100000, guid: 67980cd9b483d294b897cf573755e8f2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96346ff1413be34449362ae651f66ef3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2543,7 +2543,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6358255957642352395
+--- !u!114 &2268128734996198044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2552,7 +2552,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942289980213182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789f97242e7855d4a9b666d20a9afcc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d5745414ab35dd448867e038bf812d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   worldCanvas: {fileID: 2692907498258967142}
@@ -2566,8 +2566,10 @@ MonoBehaviour:
   - {fileID: 1926068621951506}
   - {fileID: 1195460164518758}
   - {fileID: 1420411842764852}
+  playerController: {fileID: 0}
+  interactUI: {fileID: 0}
   avatarNum: 0
-  remainTime: 5
+  remainTime: 3
   talks: []
   prevRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &2503965281979869344

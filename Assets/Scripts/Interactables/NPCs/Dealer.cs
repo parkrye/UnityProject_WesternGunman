@@ -12,7 +12,6 @@ public class Dealer : NPC
     public override void Initialize(PlayerController _player)
     {
         base.Initialize(_player);
-        uIBase = interactUI.GetComponent<UIBase>();
         playerDataManager = playerController.GetComponent<PlayerDataManager>();
         talks.Add("You Got a Gun?");
         talks.Add("How about Bigger One?");
@@ -33,13 +32,15 @@ public class Dealer : NPC
 
     void SettingUICost()
     {
-        costs = new Dictionary<(GameData.Gun, int), int> ();
-        costs.Add((GameData.Gun.HandGun, 0), 15 + 15 * weaponDatas[0].DamageUpgradeCount);
-        costs.Add((GameData.Gun.HandGun, 1), 15 + 15 * weaponDatas[0].SpeedUpgradeCount);
-        costs.Add((GameData.Gun.HandGun, 2), 15 + 15 * weaponDatas[0].RangeUpgradeCount);
-        costs.Add((GameData.Gun.ShotGun, 0), 15 + 15 * weaponDatas[1].DamageUpgradeCount);
-        costs.Add((GameData.Gun.ShotGun, 1), 15 + 15 * weaponDatas[1].SpeedUpgradeCount);
-        costs.Add((GameData.Gun.ShotGun, 2), 15 + 15 * weaponDatas[1].RangeUpgradeCount);
+        costs = new Dictionary<(GameData.Gun, int), int>
+        {
+            { (GameData.Gun.HandGun, 0), 15 + 15 * weaponDatas[0].DamageUpgradeCount },
+            { (GameData.Gun.HandGun, 1), 15 + 15 * weaponDatas[0].SpeedUpgradeCount },
+            { (GameData.Gun.HandGun, 2), 15 + 15 * weaponDatas[0].RangeUpgradeCount },
+            { (GameData.Gun.ShotGun, 0), 15 + 15 * weaponDatas[1].DamageUpgradeCount },
+            { (GameData.Gun.ShotGun, 1), 15 + 15 * weaponDatas[1].SpeedUpgradeCount },
+            { (GameData.Gun.ShotGun, 2), 15 + 15 * weaponDatas[1].RangeUpgradeCount }
+        };
 
         uIBase.texts["HandGunDamageText"].text = $"${costs[(GameData.Gun.HandGun, 0)]}";
         uIBase.texts["HandGunSpeedText"].text = $"${costs[(GameData.Gun.HandGun, 1)]}";
