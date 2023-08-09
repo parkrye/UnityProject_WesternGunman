@@ -3,7 +3,10 @@ guid: 5436bb8da631f7444bc0b5b40bc46304
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyData: {fileID: 11400000, guid: 8290fdd2f0792d64da1741af359bb210, type: 2}
+  - agent: {instanceID: 0}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

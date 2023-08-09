@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IHitable
 {
+    [SerializeField] EnemyData enemyData;
+    [SerializeField] EnemyAI enemyAI;
+
+    [SerializeField] Animator animator;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] List<GameObject> avatars;
     [SerializeField] PlayerDataManager player;
@@ -13,18 +17,19 @@ public class Enemy : MonoBehaviour, IHitable
 
     [SerializeField] LayerMask targetLayerMask;
     [SerializeField] int avatarNum, weaponNum;
-    [SerializeField] float life, money, attackSpeed, attackRange, attackDamage;
+    [SerializeField] float life, attackSpeed, attackRange, attackDamage;
     [SerializeField] bool attackable;
 
-    public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum, float time)
+    public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum)
     {
         player = _player;
         avatarNum = _avatarNum;
         weaponNum = _weaponNum;
 
-        life += time * 0.1f;
-        money += time * 0.1f;
-        attackDamage += time * 0.1f;
+        life = enemyData.Life;
+        attackDamage = enemyData.AttackDamage;
+        attackSpeed = enemyData.AttackSpeed;
+        attackRange = enemyData.AttackRange;
 
         for(int i = 0; i < avatars.Count; i++)
         {
@@ -42,18 +47,23 @@ public class Enemy : MonoBehaviour, IHitable
                 weapons[i].SetActive(false);
         }
 
+        StartCoroutine(URoutine());
         StartCoroutine(AttackRoutine());
     }
 
-    void Update()
+    IEnumerator URoutine()
     {
-        if(player != null)
+        while (life > 0)
         {
-            if(Vector3.SqrMagnitude(player.transform.position - agent.destination) > 10f)
+            if (player != null)
             {
-                agent.SetDestination(player.transform.position);
+                if (Vector3.SqrMagnitude(player.transform.position - agent.destination) > 10f)
+                {
+                    agent.SetDestination(player.transform.position);
+                }
+                AttackCheck();
             }
-            AttackCheck();
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -82,7 +92,7 @@ public class Enemy : MonoBehaviour, IHitable
             }
             else
             {
-                yield return null;
+                yield return new WaitForSeconds(1f);
             }
         }
     }
@@ -98,6 +108,6 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Dead()
     {
-
+        StopAllCoroutines();
     }
 }
