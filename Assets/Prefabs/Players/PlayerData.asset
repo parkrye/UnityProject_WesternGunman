@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c09f636669120b45a980a0f2b0542af, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  nowLife: 100
-  maxLife: 100
+  nowLife: 10
+  maxLife: 10
   nowArmor: 0
   maxArmor: 10
   money: 0

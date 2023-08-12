@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour, IHitable
 
     [SerializeField] Animator animator;
     [SerializeField] List<GameObject> avatars;
-    [SerializeField] PlayerDataManager player;
+    [SerializeField] Player player;
     [SerializeField] List<GameObject> weapons;
     [SerializeField] List<Transform> attackPositions;
     [SerializeField] EnemyBullet bulletPrefab;
+    [SerializeField] List<ParticleSystem> fireFx;
+    [SerializeField] List<AudioSource> fireSound;
 
-    [SerializeField] LayerMask targetLayerMask;
     [SerializeField] int avatarNum, weaponNum;
     [SerializeField] float life, attackSpeed, attackRange, attackDamage;
     [SerializeField] bool attackable;
@@ -22,8 +23,9 @@ public class Enemy : MonoBehaviour, IHitable
     public float AttackSpeed { get { return attackSpeed; } }
     public float AttackRange { get { return attackRange; } }
     public float AttackDamage { get { return attackDamage; } }
+    public Vector3 EnemyBodyPosition { get { return (transform.position + Vector3.up); } }
 
-    public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum, ZoneManager zoneManager)
+    public void Initialize(Player _player, int _avatarNum, int _weaponNum, ZoneManager zoneManager)
     {
         player = _player;
         avatarNum = _avatarNum;
@@ -34,27 +36,24 @@ public class Enemy : MonoBehaviour, IHitable
         attackSpeed = enemyData.AttackSpeed;
         attackRange = enemyData.AttackRange;
 
-        for(int i = 0; i < avatars.Count; i++)
+        animator.SetInteger("Weapon", weaponNum);
+
+        for (int i = 0; i < avatars.Count; i++)
         {
-            if (i == avatarNum)
-                avatars[i].SetActive(true);
-            else
-                avatars[i].SetActive(false);
+            avatars[i].SetActive(avatarNum == i);
         }
 
         for(int i = 0; i < weapons.Count; i++)
         {
-            if (i == weaponNum)
-                weapons[i].SetActive(true);
-            else
-                weapons[i].SetActive(false);
+            weapons[i].SetActive(weaponNum == i);
         }
 
-        enemyAI.Initialize(this, player.transform, zoneManager);
+        enemyAI.Initialize(this, player, zoneManager);
     }
 
     public void Hit(float damage)
     {
+        //Debug.Log($"{name} Hit {damage}");
         life -= damage;
         if(life < 0)
         {
@@ -69,7 +68,20 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Shot()
     {
+        animator.SetTrigger("Shot");
+        fireFx[weaponNum].Play();
+        fireSound[weaponNum].Play();
         EnemyBullet bullet = Instantiate(bulletPrefab, attackPositions[weaponNum].position, Quaternion.identity);
         bullet.FireBullet((player.transform.position - attackPositions[weaponNum].position).normalized, AttackDamage);
+    }
+
+    public void Move()
+    {
+        animator.SetBool("Move", true);
+    }
+
+    public void Wait()
+    {
+        animator.SetBool("Move", false);
     }
 }

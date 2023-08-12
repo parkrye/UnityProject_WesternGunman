@@ -15,18 +15,25 @@ public class EnemyBullet : MonoBehaviour
     {
         while(true)
         {
-            transform.Translate(dir * Time.deltaTime);
+            transform.Translate(dir);
             yield return new WaitForFixedUpdate();
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        PlayerDataManager player = collision.gameObject.GetComponent<PlayerDataManager>();
+        PlayerDataManager player = other.GetComponent<PlayerDataManager>();
         if (player)
         {
             player.Hit(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else
+        {
+            if((1 << other.gameObject.layer) == LayerMask.GetMask("Ground"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

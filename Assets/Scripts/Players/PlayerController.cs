@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Player player;
     [SerializeField] CharacterController characterController;
     [SerializeField] GroundChecker groundChecker;
     [SerializeField] Animator animator;
@@ -140,6 +141,11 @@ public class PlayerController : MonoBehaviour
         readyToAttack = true;
     }
 
+    public void SetEnableCharacterController(bool value)
+    {
+        characterController.enabled = value;
+    }
+
     void OnMoveInput(InputValue inputValue)
     {
         Vector2 tmpVector = inputValue.Get<Vector2>();
@@ -152,7 +158,7 @@ public class PlayerController : MonoBehaviour
         if (isBattle && nowWeapon > 0 && readyToAttack &&!isAttack && inputValue.isPressed)
         {
             isAttack = true;
-            animator.SetTrigger("ShotMove");
+            animator.SetTrigger("Attack");
         }
     }
 

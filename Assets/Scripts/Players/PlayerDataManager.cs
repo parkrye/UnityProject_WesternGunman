@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 {
+    [SerializeField] Player player;
     [SerializeField] PlayerData playerData;
     public int Money { get { return playerData.Money; } set { playerData.Money = value; moneyEvent?.Invoke(playerData.Money); } }
 
@@ -18,17 +19,11 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 
     public void Hit(float damage)
     {
-        if(playerData.NowArmor > 0f)
-            playerData.NowArmor -= damage;
-
-        if(playerData.NowArmor < 0f)
+        playerData.NowArmor -= damage;
+        if (playerData.NowArmor < 0f)
         {
             playerData.NowLife += playerData.NowArmor;
             playerData.NowArmor = 0f;
-        }
-        else
-        {
-            playerData.NowLife -= damage;
         }
 
         if(playerData.NowLife < 0)

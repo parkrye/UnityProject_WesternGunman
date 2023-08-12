@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "PlayerData", menuName = "Data/PlayerData")]

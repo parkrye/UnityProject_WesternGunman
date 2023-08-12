@@ -13,6 +13,7 @@ public abstract class Weapon : MonoBehaviour
 
     public float Attack()
     {
+        //Debug.Log($"{name} Weapon Attack");
         StartCoroutine(AttackRoutine());
         return weaponData.Speed;
     }

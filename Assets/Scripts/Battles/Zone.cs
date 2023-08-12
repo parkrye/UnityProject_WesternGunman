@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -40,12 +41,27 @@ public class Zone : MonoBehaviour
         }
     }
 
-    public Transform GetLeastDistancePassibleZone(Transform nowTransform)
+    public int GetLeastDistancePassibleZone(Transform nowTransform, List<int> exceptNums = null)
     {
         int leastDistanceIndex = 0;
         float leastDistance = float.MaxValue;
         for(int i = 0; i < passibleZone.Count; i++)
         {
+            if(exceptNums.Count > 0)
+            {
+                bool pass = false;
+                for(int j = 0; j < exceptNums.Count; j++)
+                {
+                    if(i == j)
+                    {
+                        pass = true;
+                    }
+                }
+                if (pass)
+                {
+                    continue;
+                }
+            }
             float sqrDistance = Vector3.SqrMagnitude(passibleZone[i].transform.position - nowTransform.position);
             if(sqrDistance < leastDistance)
             {
@@ -54,15 +70,31 @@ public class Zone : MonoBehaviour
             }
         }
 
-        return passibleZone[leastDistanceIndex].transform;
+        return passibleZone[leastDistanceIndex].ZoneNumber;
     }
 
-    public Transform GetLeastDistanceBlockedZone(Transform nowTransform)
+    public int GetLeastDistanceBlockedZone(Transform nowTransform, List<int> exceptNums = null)
     {
         int leastDistanceIndex = 0;
         float leastDistance = float.MaxValue;
         for (int i = 0; i < blockedZone.Count; i++)
         {
+            if (exceptNums.Count > 0)
+            {
+                bool pass = false;
+                for (int j = 0; j < exceptNums.Count; j++)
+                {
+                    if (i == j)
+                    {
+                        pass = true;
+                    }
+                }
+                if (pass)
+                {
+                    continue;
+                }
+            }
+
             float sqrDistance = Vector3.SqrMagnitude(blockedZone[i].transform.position - nowTransform.position);
             if (sqrDistance < leastDistance)
             {
@@ -71,7 +103,7 @@ public class Zone : MonoBehaviour
             }
         }
 
-        return blockedZone[leastDistanceIndex].transform;
+        return blockedZone[leastDistanceIndex].ZoneNumber;
     }
 
     void OnTriggerEnter(Collider other)
