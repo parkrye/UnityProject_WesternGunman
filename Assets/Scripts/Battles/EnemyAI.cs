@@ -152,6 +152,8 @@ public class EnemyAI : MonoBehaviour
         int shotCount = Random.Range(1, 4);
         while (shotCount > 0)
         {
+            transform.LookAt(playerTransform.position);
+            transform.localEulerAngles = new Vector3(0f, transform.localEulerAngles.y, 0f);
             enemy.Shot();
             shotCount--;
             yield return new WaitForSeconds(enemy.AttackSpeed);

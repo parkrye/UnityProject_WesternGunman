@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IHitable
 {
@@ -13,6 +11,7 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] PlayerDataManager player;
     [SerializeField] List<GameObject> weapons;
     [SerializeField] List<Transform> attackPositions;
+    [SerializeField] EnemyBullet bulletPrefab;
 
     [SerializeField] LayerMask targetLayerMask;
     [SerializeField] int avatarNum, weaponNum;
@@ -24,7 +23,7 @@ public class Enemy : MonoBehaviour, IHitable
     public float AttackRange { get { return attackRange; } }
     public float AttackDamage { get { return attackDamage; } }
 
-    public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum)
+    public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum, ZoneManager zoneManager)
     {
         player = _player;
         avatarNum = _avatarNum;
@@ -50,6 +49,8 @@ public class Enemy : MonoBehaviour, IHitable
             else
                 weapons[i].SetActive(false);
         }
+
+        enemyAI.Initialize(this, player.transform, zoneManager);
     }
 
     public void Hit(float damage)
@@ -68,6 +69,7 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Shot()
     {
-
+        EnemyBullet bullet = Instantiate(bulletPrefab, attackPositions[weaponNum].position, Quaternion.identity);
+        bullet.FireBullet((player.transform.position - attackPositions[weaponNum].position).normalized, AttackDamage);
     }
 }

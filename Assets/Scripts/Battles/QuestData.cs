@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu (fileName = "QuestData", menuName = "Data/QuestData")]
+[CreateAssetMenu (fileName = "questData", menuName = "Data/questData")]
 public class QuestData : ScriptableObject
 {
     [SerializeField] int enemyCount, pay, areaNum;
