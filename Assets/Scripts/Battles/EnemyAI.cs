@@ -77,7 +77,7 @@ public class EnemyAI : MonoBehaviour
         {
             if(navMeshAgent.remainingDistance < 1f)
                 break;
-            if (timeCheck > 30f)
+            if (timeCheck > 10f)
                 break;
             timeCheck += Time.deltaTime;
             yield return null;

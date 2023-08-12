@@ -8,14 +8,13 @@ public class Zone : MonoBehaviour
     [SerializeField] List<Zone> blockedZone;
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] int zoneNumber;
-    [SerializeField] float radius;
     public List<Zone> PassibleZone { get { return passibleZone; } }
     public List<Zone> BlockedZone { get { return blockedZone; } }
     public int ZoneNumber { get { return zoneNumber; } }
 
     public UnityEvent<int> PlayerEnterEvent;
 
-    public void Initialize(Zone[] wholeZone, LayerMask _playerLayerMask, int _zoneNumber, float _radius)
+    public void Initialize(Zone[] wholeZone, LayerMask _playerLayerMask, int _zoneNumber)
     {
         PlayerEnterEvent = new UnityEvent<int>();
         passibleZone = new List<Zone>();
@@ -23,15 +22,15 @@ public class Zone : MonoBehaviour
 
         playerLayerMask = _playerLayerMask;
         zoneNumber = _zoneNumber;
-        radius = _radius;
 
         for(int i = 0; i < wholeZone.Length; i++)
         {
             if (wholeZone[i].Equals(this))
                 continue;
 
-            if (Physics.SphereCast(transform.position, radius, (wholeZone[i].transform.position - transform.position).normalized, out _, (wholeZone[i].transform.position - transform.position).magnitude))
+            if (Physics.Raycast(transform.position, (wholeZone[i].transform.position - transform.position).normalized, out RaycastHit hit, (wholeZone[i].transform.position - transform.position).magnitude))
             {
+                
                 blockedZone.Add(wholeZone[i]);
             }
             else

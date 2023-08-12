@@ -124,7 +124,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f807169900ce99744a8b8ed4346078f4, type: 2}
 --- !u!1001 &1664926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 2253620}
   - component: {fileID: 2253622}
   - component: {fileID: 2253621}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1218,7 +1217,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1772962104}
+    m_TransformParent: {fileID: 1569905595}
     m_Modifications:
     - target: {fileID: 1075536610729002, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_Layer
@@ -1258,7 +1257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_Name
-      value: SM_Veh_Stagecoach_01 (1)
+      value: Carrige
       objectReference: {fileID: 0}
     - target: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_Layer
@@ -1390,23 +1389,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_RootOrder
-      value: 670
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: -12.62664
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.20000005
+      value: -1.1757842
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.77
+      value: -4.5235367
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.01606141
+      value: 0.9999881
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1414,11 +1413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.999871
+      value: 0.004886923
       objectReference: {fileID: 0}
     - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996038569718162, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 23057793434612658, guid: e72121a7df4802c4ab486fd94cb370ed,
         type: 3}
@@ -3838,7 +3841,7 @@ GameObject:
   - component: {fileID: 77538219}
   - component: {fileID: 77538221}
   - component: {fileID: 77538220}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3878,7 +3881,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5111,7 +5113,7 @@ GameObject:
   - component: {fileID: 100040388}
   - component: {fileID: 100040390}
   - component: {fileID: 100040389}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5151,7 +5153,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5422,7 +5423,7 @@ GameObject:
   - component: {fileID: 101874681}
   - component: {fileID: 101874683}
   - component: {fileID: 101874682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5462,7 +5463,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6371,7 +6371,7 @@ GameObject:
   - component: {fileID: 108753452}
   - component: {fileID: 108753454}
   - component: {fileID: 108753453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6411,7 +6411,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7116,7 +7115,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerPositionZone: 0
-  radius: 2
 --- !u!1001 &126972727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8055,7 +8053,7 @@ GameObject:
   - component: {fileID: 146601116}
   - component: {fileID: 146601118}
   - component: {fileID: 146601117}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8095,7 +8093,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9945,7 +9942,7 @@ GameObject:
   - component: {fileID: 197004698}
   - component: {fileID: 197004700}
   - component: {fileID: 197004699}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9985,7 +9982,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10181,127 +10177,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d0b0fb7b244b94caeabd0b28b6ba72, type: 3}
---- !u!1 &202204891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 202204896}
-  - component: {fileID: 202204895}
-  - component: {fileID: 202204894}
-  - component: {fileID: 202204893}
-  - component: {fileID: 202204892}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &202204892
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202204891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &202204893
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202204891}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &202204894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202204891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3308d5c5c0cb1134ca914713a9ceb490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  navMeshAgent: {fileID: 0}
-  zoneManager: {fileID: 0}
-  playerTransform: {fileID: 0}
-  aI_State: 0
-  nowZone: -1
-  readyToNextAction: 0
-  isKeepingAction: 0
---- !u!114 &202204895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202204891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5436bb8da631f7444bc0b5b40bc46304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 8290fdd2f0792d64da1741af359bb210, type: 2}
-  enemyAI: {fileID: 0}
-  animator: {fileID: 0}
-  avatars: []
-  player: {fileID: 0}
-  weapons: []
-  attackPositions: []
-  bulletPrefab: {fileID: 0}
-  targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  avatarNum: 0
-  weaponNum: 0
-  life: 0
-  attackSpeed: 0
-  attackRange: 0
-  attackDamage: 0
-  attackable: 0
---- !u!4 &202204896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202204891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &203463756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10613,7 +10488,7 @@ GameObject:
   - component: {fileID: 212027656}
   - component: {fileID: 212027658}
   - component: {fileID: 212027657}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10653,7 +10528,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11614,7 +11488,7 @@ GameObject:
   - component: {fileID: 235120968}
   - component: {fileID: 235120970}
   - component: {fileID: 235120969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11654,7 +11528,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12886,7 +12759,7 @@ GameObject:
   - component: {fileID: 258148437}
   - component: {fileID: 258148439}
   - component: {fileID: 258148438}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12926,7 +12799,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14643,7 +14515,7 @@ GameObject:
   - component: {fileID: 300314603}
   - component: {fileID: 300314605}
   - component: {fileID: 300314604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14683,7 +14555,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14959,7 +14830,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerPositionZone: 0
-  radius: 2
 --- !u!1001 &314727118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15243,7 +15113,7 @@ GameObject:
   - component: {fileID: 324085110}
   - component: {fileID: 324085112}
   - component: {fileID: 324085111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15283,7 +15153,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15397,6 +15266,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -56.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+        type: 3}
+      propertyPath: zoneManager
+      value: 
+      objectReference: {fileID: 653678738}
     - target: {fileID: 5538528750503451903, guid: af53bc400e200f2449b799fab70f671b,
         type: 3}
       propertyPath: m_Name
@@ -15505,6 +15379,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 324216728}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &324216730 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+    type: 3}
+  m_PrefabInstance: {fileID: 324216728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242af775b69f4124aa8c27fe45fa88e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &327919963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19101,6 +18987,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.9
       objectReference: {fileID: 0}
+    - target: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+        type: 3}
+      propertyPath: zoneManager
+      value: 
+      objectReference: {fileID: 126726314}
     - target: {fileID: 5538528750503451903, guid: af53bc400e200f2449b799fab70f671b,
         type: 3}
       propertyPath: m_Name
@@ -19209,6 +19100,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 409492559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &409492561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+    type: 3}
+  m_PrefabInstance: {fileID: 409492559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242af775b69f4124aa8c27fe45fa88e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -19410,7 +19313,7 @@ GameObject:
   - component: {fileID: 410989293}
   - component: {fileID: 410989295}
   - component: {fileID: 410989294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19450,7 +19353,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19478,7 +19380,7 @@ GameObject:
   - component: {fileID: 414880692}
   - component: {fileID: 414880694}
   - component: {fileID: 414880693}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19518,7 +19420,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19823,7 +19724,7 @@ GameObject:
   - component: {fileID: 420591255}
   - component: {fileID: 420591257}
   - component: {fileID: 420591256}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19863,7 +19764,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -21784,7 +21684,7 @@ GameObject:
   - component: {fileID: 473081597}
   - component: {fileID: 473081599}
   - component: {fileID: 473081598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21824,7 +21724,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22555,7 +22454,7 @@ GameObject:
   - component: {fileID: 494017416}
   - component: {fileID: 494017418}
   - component: {fileID: 494017417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22595,7 +22494,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22623,7 +22521,7 @@ GameObject:
   - component: {fileID: 494258765}
   - component: {fileID: 494258767}
   - component: {fileID: 494258766}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22663,7 +22561,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22936,7 +22833,7 @@ GameObject:
   - component: {fileID: 495282276}
   - component: {fileID: 495282278}
   - component: {fileID: 495282277}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22976,7 +22873,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -23936,7 +23832,7 @@ GameObject:
   - component: {fileID: 520853596}
   - component: {fileID: 520853598}
   - component: {fileID: 520853597}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23976,7 +23872,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -24770,7 +24665,7 @@ GameObject:
   - component: {fileID: 533241422}
   - component: {fileID: 533241424}
   - component: {fileID: 533241423}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24810,7 +24705,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27150,7 +27044,7 @@ GameObject:
   - component: {fileID: 577955395}
   - component: {fileID: 577955397}
   - component: {fileID: 577955396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27190,7 +27084,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27510,7 +27403,7 @@ GameObject:
   - component: {fileID: 588094060}
   - component: {fileID: 588094062}
   - component: {fileID: 588094061}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27550,7 +27443,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27706,7 +27598,7 @@ GameObject:
   - component: {fileID: 595268980}
   - component: {fileID: 595268982}
   - component: {fileID: 595268981}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27746,7 +27638,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28254,6 +28145,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 601059773}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &601786861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 26843473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &601786862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601786861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e57f0e6da9057142bd167191d2302cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questData: {fileID: 11400000, guid: 110478d63b714ce4b9fc44af665439c0, type: 2}
+  enemyPrefab: {fileID: 701313711696673626, guid: ac8d8bccc186d944396227d06fe9f632,
+    type: 3}
+  playerDataManager: {fileID: 1240238088}
+  questAreas:
+  - {fileID: 7817808372852113314}
+  - {fileID: 409492561}
+  - {fileID: 324216730}
 --- !u!1001 &603096705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29184,7 +29101,7 @@ GameObject:
   - component: {fileID: 621305957}
   - component: {fileID: 621305959}
   - component: {fileID: 621305958}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29224,7 +29141,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30200,7 +30116,7 @@ GameObject:
   - component: {fileID: 645068538}
   - component: {fileID: 645068540}
   - component: {fileID: 645068539}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30240,7 +30156,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30268,7 +30183,7 @@ GameObject:
   - component: {fileID: 648319404}
   - component: {fileID: 648319406}
   - component: {fileID: 648319405}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30308,7 +30223,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30736,7 +30650,7 @@ GameObject:
   - component: {fileID: 652876223}
   - component: {fileID: 652876225}
   - component: {fileID: 652876224}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30776,7 +30690,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30956,7 +30869,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerPositionZone: 0
-  radius: 2
 --- !u!1001 &657546412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36671,7 +36583,7 @@ GameObject:
   - component: {fileID: 797126485}
   - component: {fileID: 797126487}
   - component: {fileID: 797126486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36711,7 +36623,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37684,7 +37595,7 @@ GameObject:
   - component: {fileID: 814466296}
   - component: {fileID: 814466298}
   - component: {fileID: 814466297}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37724,7 +37635,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38379,7 +38289,7 @@ GameObject:
   - component: {fileID: 834960332}
   - component: {fileID: 834960334}
   - component: {fileID: 834960333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38419,7 +38329,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -40397,7 +40306,7 @@ GameObject:
   - component: {fileID: 882236929}
   - component: {fileID: 882236931}
   - component: {fileID: 882236930}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40437,7 +40346,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -41780,7 +41688,7 @@ GameObject:
   - component: {fileID: 917209218}
   - component: {fileID: 917209220}
   - component: {fileID: 917209219}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41820,7 +41728,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42261,7 +42168,7 @@ GameObject:
   - component: {fileID: 925673158}
   - component: {fileID: 925673160}
   - component: {fileID: 925673159}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42301,7 +42208,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -44550,7 +44456,7 @@ GameObject:
   - component: {fileID: 993942830}
   - component: {fileID: 993942832}
   - component: {fileID: 993942831}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44590,7 +44496,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -47691,7 +47596,7 @@ GameObject:
   - component: {fileID: 1065140625}
   - component: {fileID: 1065140627}
   - component: {fileID: 1065140626}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47731,7 +47636,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -48535,7 +48439,7 @@ GameObject:
   - component: {fileID: 1079096676}
   - component: {fileID: 1079096678}
   - component: {fileID: 1079096677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48575,7 +48479,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50289,7 +50192,7 @@ GameObject:
   - component: {fileID: 1120471237}
   - component: {fileID: 1120471239}
   - component: {fileID: 1120471238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50329,7 +50232,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51523,7 +51425,7 @@ GameObject:
   - component: {fileID: 1146865730}
   - component: {fileID: 1146865732}
   - component: {fileID: 1146865731}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51563,7 +51465,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51626,6 +51527,10 @@ PrefabInstance:
     - target: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546056628772920, guid: e72121a7df4802c4ab486fd94cb370ed, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -53411,7 +53316,7 @@ GameObject:
   - component: {fileID: 1187451011}
   - component: {fileID: 1187451013}
   - component: {fileID: 1187451012}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53451,7 +53356,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -54584,7 +54488,7 @@ GameObject:
   - component: {fileID: 1214918562}
   - component: {fileID: 1214918564}
   - component: {fileID: 1214918563}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54624,7 +54528,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -55672,7 +55575,7 @@ GameObject:
   - component: {fileID: 1227870034}
   - component: {fileID: 1227870036}
   - component: {fileID: 1227870035}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55712,7 +55615,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56485,7 +56387,7 @@ GameObject:
   - component: {fileID: 1238659879}
   - component: {fileID: 1238659881}
   - component: {fileID: 1238659880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56525,7 +56427,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56553,7 +56454,7 @@ GameObject:
   - component: {fileID: 1239044806}
   - component: {fileID: 1239044808}
   - component: {fileID: 1239044807}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56593,7 +56494,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56700,7 +56600,7 @@ GameObject:
   - component: {fileID: 1243303736}
   - component: {fileID: 1243303738}
   - component: {fileID: 1243303737}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56740,7 +56640,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56939,7 +56838,7 @@ GameObject:
   - component: {fileID: 1247026118}
   - component: {fileID: 1247026120}
   - component: {fileID: 1247026119}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56979,7 +56878,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -61115,7 +61013,7 @@ GameObject:
   - component: {fileID: 1340771486}
   - component: {fileID: 1340771488}
   - component: {fileID: 1340771487}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61155,7 +61053,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62194,7 +62091,7 @@ GameObject:
   - component: {fileID: 1361643538}
   - component: {fileID: 1361643540}
   - component: {fileID: 1361643539}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62234,7 +62131,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62647,7 +62543,7 @@ GameObject:
   - component: {fileID: 1371667205}
   - component: {fileID: 1371667207}
   - component: {fileID: 1371667206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62687,7 +62583,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -63303,7 +63198,7 @@ GameObject:
   - component: {fileID: 1393026251}
   - component: {fileID: 1393026253}
   - component: {fileID: 1393026252}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63343,7 +63238,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -64014,7 +63908,7 @@ GameObject:
   - component: {fileID: 1401032651}
   - component: {fileID: 1401032653}
   - component: {fileID: 1401032652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64054,7 +63948,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -64650,7 +64543,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772962104}
-  m_RootOrder: 813
+  m_RootOrder: 687
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1412938676
 MonoBehaviour:
@@ -65622,7 +65515,7 @@ GameObject:
   - component: {fileID: 1431279981}
   - component: {fileID: 1431279983}
   - component: {fileID: 1431279982}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65662,7 +65555,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -65840,7 +65732,7 @@ GameObject:
   - component: {fileID: 1437469264}
   - component: {fileID: 1437469266}
   - component: {fileID: 1437469265}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65880,7 +65772,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67062,7 +66953,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772962104}
-  m_RootOrder: 687
+  m_RootOrder: 670
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1469115644
 MonoBehaviour:
@@ -67341,7 +67232,7 @@ GameObject:
   - component: {fileID: 1477963507}
   - component: {fileID: 1477963509}
   - component: {fileID: 1477963508}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67381,7 +67272,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -70294,7 +70184,7 @@ GameObject:
   - component: {fileID: 1524654537}
   - component: {fileID: 1524654539}
   - component: {fileID: 1524654538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70334,7 +70224,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71178,7 +71067,7 @@ GameObject:
   - component: {fileID: 1542916371}
   - component: {fileID: 1542916373}
   - component: {fileID: 1542916372}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71218,7 +71107,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71313,7 +71201,7 @@ GameObject:
   - component: {fileID: 1545370761}
   - component: {fileID: 1545370763}
   - component: {fileID: 1545370762}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71353,7 +71241,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -72214,6 +72101,7 @@ Transform:
   - {fileID: 1030799952}
   - {fileID: 388716105}
   - {fileID: 271475784}
+  - {fileID: 26843474}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75972,7 +75860,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772962104}
-  m_RootOrder: 839
+  m_RootOrder: 813
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1665593303
 MonoBehaviour:
@@ -77633,7 +77521,7 @@ GameObject:
   - component: {fileID: 1695979912}
   - component: {fileID: 1695979914}
   - component: {fileID: 1695979913}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77673,7 +77561,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -77701,7 +77588,7 @@ GameObject:
   - component: {fileID: 1698323830}
   - component: {fileID: 1698323832}
   - component: {fileID: 1698323831}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77741,7 +77628,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -79790,7 +79676,7 @@ GameObject:
   - component: {fileID: 1744716972}
   - component: {fileID: 1744716974}
   - component: {fileID: 1744716973}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79830,7 +79716,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -81189,7 +81074,7 @@ GameObject:
   - component: {fileID: 1772311363}
   - component: {fileID: 1772311365}
   - component: {fileID: 1772311364}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81229,7 +81114,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -81944,7 +81828,7 @@ Transform:
   - {fileID: 630006355}
   - {fileID: 1614285477}
   - {fileID: 1030223404}
-  - {fileID: 26843474}
+  - {fileID: 1469115643}
   - {fileID: 1147499343}
   - {fileID: 1318153270}
   - {fileID: 43805574}
@@ -81961,7 +81845,7 @@ Transform:
   - {fileID: 1592499084}
   - {fileID: 600644076}
   - {fileID: 2008518048}
-  - {fileID: 1469115643}
+  - {fileID: 1412938675}
   - {fileID: 1634374710}
   - {fileID: 1924263253}
   - {fileID: 680498215}
@@ -82087,7 +81971,7 @@ Transform:
   - {fileID: 1209983420}
   - {fileID: 515458823}
   - {fileID: 1444629344}
-  - {fileID: 1412938675}
+  - {fileID: 1665593302}
   - {fileID: 180072709}
   - {fileID: 2002003135}
   - {fileID: 34167927}
@@ -82113,7 +81997,6 @@ Transform:
   - {fileID: 2143979114}
   - {fileID: 1339186919}
   - {fileID: 1370220636}
-  - {fileID: 1665593302}
   - {fileID: 1415944947}
   - {fileID: 811604237}
   - {fileID: 1954366292}
@@ -82192,6 +82075,7 @@ Transform:
   - {fileID: 1216286760}
   - {fileID: 367274527}
   - {fileID: 1571702149}
+  - {fileID: 1836121519}
   - {fileID: 284751270}
   - {fileID: 1897365896}
   - {fileID: 1685972287}
@@ -82277,7 +82161,6 @@ Transform:
   - {fileID: 2102068595}
   - {fileID: 1944475204}
   - {fileID: 1763364991}
-  - {fileID: 1836121519}
   - {fileID: 2105443353}
   - {fileID: 1731980271}
   - {fileID: 1909286244}
@@ -82875,7 +82758,7 @@ GameObject:
   - component: {fileID: 1783642007}
   - component: {fileID: 1783642009}
   - component: {fileID: 1783642008}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82915,7 +82798,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83374,7 +83256,7 @@ GameObject:
   - component: {fileID: 1797510783}
   - component: {fileID: 1797510785}
   - component: {fileID: 1797510784}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83414,7 +83296,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83916,7 +83797,7 @@ GameObject:
   - component: {fileID: 1802246456}
   - component: {fileID: 1802246458}
   - component: {fileID: 1802246457}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83956,7 +83837,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84178,7 +84058,7 @@ GameObject:
   - component: {fileID: 1806296868}
   - component: {fileID: 1806296870}
   - component: {fileID: 1806296869}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84218,7 +84098,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84484,7 +84363,7 @@ GameObject:
   - component: {fileID: 1813274145}
   - component: {fileID: 1813274147}
   - component: {fileID: 1813274146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84524,7 +84403,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -85476,7 +85354,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772962104}
-  m_RootOrder: 1003
+  m_RootOrder: 917
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1836121520
 MeshRenderer:
@@ -86014,7 +85892,7 @@ GameObject:
   - component: {fileID: 1856695186}
   - component: {fileID: 1856695188}
   - component: {fileID: 1856695187}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86054,7 +85932,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -87650,7 +87527,7 @@ GameObject:
   - component: {fileID: 1894531250}
   - component: {fileID: 1894531252}
   - component: {fileID: 1894531251}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87690,7 +87567,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88808,7 +88684,7 @@ GameObject:
   - component: {fileID: 1924100543}
   - component: {fileID: 1924100545}
   - component: {fileID: 1924100544}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88848,7 +88724,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -91371,7 +91246,7 @@ GameObject:
   - component: {fileID: 1982855142}
   - component: {fileID: 1982855144}
   - component: {fileID: 1982855143}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91411,7 +91286,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -91439,7 +91313,7 @@ GameObject:
   - component: {fileID: 1983580612}
   - component: {fileID: 1983580614}
   - component: {fileID: 1983580613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91479,7 +91353,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -91760,7 +91633,7 @@ GameObject:
   - component: {fileID: 1988542973}
   - component: {fileID: 1988542975}
   - component: {fileID: 1988542974}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91800,7 +91673,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -93552,7 +93424,7 @@ GameObject:
   - component: {fileID: 2026698930}
   - component: {fileID: 2026698932}
   - component: {fileID: 2026698931}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93592,7 +93464,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95916,7 +95787,7 @@ GameObject:
   - component: {fileID: 2066106631}
   - component: {fileID: 2066106633}
   - component: {fileID: 2066106632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95956,7 +95827,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96146,7 +96016,7 @@ GameObject:
   - component: {fileID: 2070652220}
   - component: {fileID: 2070652222}
   - component: {fileID: 2070652221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96186,7 +96056,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96214,7 +96083,7 @@ GameObject:
   - component: {fileID: 2071056985}
   - component: {fileID: 2071056987}
   - component: {fileID: 2071056986}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96254,7 +96123,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96866,7 +96734,7 @@ GameObject:
   - component: {fileID: 2084998623}
   - component: {fileID: 2084998625}
   - component: {fileID: 2084998624}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96906,7 +96774,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97863,7 +97730,7 @@ GameObject:
   - component: {fileID: 2103287106}
   - component: {fileID: 2103287108}
   - component: {fileID: 2103287107}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97903,7 +97770,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97931,7 +97797,7 @@ GameObject:
   - component: {fileID: 2104674466}
   - component: {fileID: 2104674468}
   - component: {fileID: 2104674467}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97971,7 +97837,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -99537,7 +99402,7 @@ GameObject:
   - component: {fileID: 2139600055}
   - component: {fileID: 2139600057}
   - component: {fileID: 2139600056}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99577,7 +99442,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100104,7 +99968,7 @@ GameObject:
   - component: {fileID: 2146853598}
   - component: {fileID: 2146853600}
   - component: {fileID: 2146853599}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100144,7 +100008,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   zoneNumber: 0
-  radius: 0
   PlayerEnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100470,6 +100333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 478693070}
     m_Modifications:
+    - target: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+        type: 3}
+      propertyPath: zoneManager
+      value: 
+      objectReference: {fileID: 312031524}
     - target: {fileID: 5538528750503451903, guid: af53bc400e200f2449b799fab70f671b,
         type: 3}
       propertyPath: m_Name
@@ -100543,3 +100411,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7817808372852113312}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7817808372852113314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4917942063478584117, guid: af53bc400e200f2449b799fab70f671b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7817808372852113312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242af775b69f4124aa8c27fe45fa88e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

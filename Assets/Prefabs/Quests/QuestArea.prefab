@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7639993183583207506}
+  - component: {fileID: 4917942063478584117}
   - component: {fileID: -2729455142382436438}
   - component: {fileID: 9174158830157091227}
   - component: {fileID: 8694095257631249045}
@@ -100,6 +101,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4917942063478584117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538528750503451903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242af775b69f4124aa8c27fe45fa88e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStartTransform: {fileID: 4603974881938188312}
+  enemySpawnTransform: {fileID: 4370124587576484697}
+  zoneManager: {fileID: 0}
 --- !u!65 &-2729455142382436438
 BoxCollider:
   m_ObjectHideFlags: 0
