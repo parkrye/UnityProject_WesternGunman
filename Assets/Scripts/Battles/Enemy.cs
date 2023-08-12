@@ -51,6 +51,26 @@ public class Enemy : MonoBehaviour, IHitable
         StartCoroutine(AttackRoutine());
     }
 
+    public void ChangeState()
+    {
+
+    }
+
+    public void Attack()
+    {
+
+    }
+
+    public void Run()
+    {
+
+    }
+
+    public void Watch()
+    {
+
+    }
+
     IEnumerator URoutine()
     {
         while (life > 0)
