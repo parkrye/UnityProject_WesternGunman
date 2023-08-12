@@ -2453,9 +2453,6 @@ MonoBehaviour:
   fireSound:
   - {fileID: 3757261769078631222}
   - {fileID: 3294509934816436106}
-  targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   avatarNum: 0
   weaponNum: 0
   life: 10
@@ -2487,6 +2484,7 @@ MonoBehaviour:
   readyToNextAction: 0
   isKeepingAction: 0
   timewait: 0
+  exceptNums: 
 --- !u!136 &6888149067539004702
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2750,7 +2748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &12498795214601093
 Transform:
   m_ObjectHideFlags: 0
