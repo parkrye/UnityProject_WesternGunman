@@ -29236,7 +29236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questData: {fileID: 11400000, guid: 110478d63b714ce4b9fc44af665439c0, type: 2}
-  enemyPrefab: {fileID: 701313711696673626, guid: ac8d8bccc186d944396227d06fe9f632,
+  enemyPrefab: {fileID: 1096605688598660496, guid: d97ee9323dd529f4a9d1320df3718b18,
     type: 3}
   player: {fileID: 1787405738}
   questAreas:
