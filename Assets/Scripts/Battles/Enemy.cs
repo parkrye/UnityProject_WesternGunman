@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] EnemyAI enemyAI;
 
     [SerializeField] Animator animator;
-    [SerializeField] NavMeshAgent agent;
     [SerializeField] List<GameObject> avatars;
     [SerializeField] PlayerDataManager player;
     [SerializeField] List<GameObject> weapons;
@@ -19,6 +18,11 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] int avatarNum, weaponNum;
     [SerializeField] float life, attackSpeed, attackRange, attackDamage;
     [SerializeField] bool attackable;
+
+    public float Life { get { return life; } }
+    public float AttackSpeed { get { return attackSpeed; } }
+    public float AttackRange { get { return attackRange; } }
+    public float AttackDamage { get { return attackDamage; } }
 
     public void Initialize(PlayerDataManager _player, int _avatarNum, int _weaponNum)
     {
@@ -46,75 +50,6 @@ public class Enemy : MonoBehaviour, IHitable
             else
                 weapons[i].SetActive(false);
         }
-
-        StartCoroutine(URoutine());
-        StartCoroutine(AttackRoutine());
-    }
-
-    public void ChangeState()
-    {
-
-    }
-
-    public void Attack()
-    {
-
-    }
-
-    public void Run()
-    {
-
-    }
-
-    public void Watch()
-    {
-
-    }
-
-    IEnumerator URoutine()
-    {
-        while (life > 0)
-        {
-            if (player != null)
-            {
-                if (Vector3.SqrMagnitude(player.transform.position - agent.destination) > 10f)
-                {
-                    agent.SetDestination(player.transform.position);
-                }
-                AttackCheck();
-            }
-            yield return new WaitForSeconds(1f);
-        }
-    }
-
-    void AttackCheck()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(attackPositions[weaponNum].position, transform.forward, out hit, attackRange))
-        {
-            PlayerDataManager hitTarget = hit.collider.GetComponent<PlayerDataManager>();
-            if (hitTarget)
-            {
-                attackable = true;
-            }
-        }
-    }
-
-    IEnumerator AttackRoutine()
-    {
-        while(life > 0)
-        {
-            if (attackable)
-            {
-                player.Hit(attackDamage);
-                attackable = false;
-                yield return new WaitForSeconds(attackSpeed);
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-            }
-        }
     }
 
     public void Hit(float damage)
@@ -129,5 +64,10 @@ public class Enemy : MonoBehaviour, IHitable
     public void Dead()
     {
         StopAllCoroutines();
+    }
+
+    public void Shot()
+    {
+
     }
 }

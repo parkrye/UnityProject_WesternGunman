@@ -9,6 +9,9 @@ public class Zone : MonoBehaviour
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] int zoneNumber;
     [SerializeField] float radius;
+    public List<Zone> PassibleZone { get { return passibleZone; } }
+    public List<Zone> BlockedZone { get { return blockedZone; } }
+    public int ZoneNumber { get { return zoneNumber; } }
 
     public UnityEvent<int> PlayerEnterEvent;
 
@@ -27,7 +30,7 @@ public class Zone : MonoBehaviour
             if (wholeZone[i].Equals(this))
                 continue;
 
-            if (Physics.SphereCast(transform.position, radius, (transform.position - wholeZone[i].transform.position), out _))
+            if (Physics.SphereCast(transform.position, radius, (wholeZone[i].transform.position - transform.position).normalized, out _, (wholeZone[i].transform.position - transform.position).magnitude))
             {
                 blockedZone.Add(wholeZone[i]);
             }
@@ -44,7 +47,7 @@ public class Zone : MonoBehaviour
         float leastDistance = float.MaxValue;
         for(int i = 0; i < passibleZone.Count; i++)
         {
-            float sqrDistance = Vector3.SqrMagnitude(nowTransform.position - passibleZone[i].transform.position);
+            float sqrDistance = Vector3.SqrMagnitude(passibleZone[i].transform.position - nowTransform.position);
             if(sqrDistance < leastDistance)
             {
                 leastDistanceIndex = i;
@@ -61,7 +64,7 @@ public class Zone : MonoBehaviour
         float leastDistance = float.MaxValue;
         for (int i = 0; i < blockedZone.Count; i++)
         {
-            float sqrDistance = Vector3.SqrMagnitude(nowTransform.position - blockedZone[i].transform.position);
+            float sqrDistance = Vector3.SqrMagnitude(blockedZone[i].transform.position - nowTransform.position);
             if (sqrDistance < leastDistance)
             {
                 leastDistanceIndex = i;

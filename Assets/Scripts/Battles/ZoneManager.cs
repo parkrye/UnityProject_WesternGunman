@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoneManager : MonoBehaviour
@@ -8,7 +6,8 @@ public class ZoneManager : MonoBehaviour
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] int playerPositionZone;
     [SerializeField] float radius;
-    public int GetPlayerPositionedZone { get { return playerPositionZone; } }
+    public int PlayerPositionedZone { get { return playerPositionZone; } }
+    public Zone[] Zone { get { return wholeZone; } }
 
     void Awake()
     {

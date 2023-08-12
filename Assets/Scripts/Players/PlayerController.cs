@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
         if (isBattle && nowWeapon > 0 && readyToAttack &&!isAttack && inputValue.isPressed)
         {
             isAttack = true;
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("ShotMove");
         }
     }
 
