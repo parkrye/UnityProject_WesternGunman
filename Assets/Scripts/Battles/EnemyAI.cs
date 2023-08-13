@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField][Range(0f, 1f)] float brave, timid;
 
     [SerializeField] int nowZone = -1;
-    [SerializeField] bool readyToNextAction, isKeepingAction;
+    [SerializeField] bool readyToNextAction, isKeepingAction, startActionRoutine;
     [SerializeField] float timewait;
     [SerializeField] List<int> exceptNums;
 
@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
         zoneManager = _zoneManager;
         readyToNextAction = true;
         isKeepingAction = false;
+        startActionRoutine = false;
         exceptNums = new List<int>();
 
         brave = _brave;
@@ -133,10 +134,11 @@ public class EnemyAI : MonoBehaviour
             readyToNextAction = true;
             return;
         }
+
         if (readyToNextAction)
         {
-            timewait = 0f;
             readyToNextAction = false;
+            timewait = 0f;
             int moveZoneNum = zoneManager.Zone[zoneManager.PlayerPositionedZone].GetLeastDistanceBlockedZone(transform, exceptNums);
             navMeshAgent.SetDestination(zoneManager.Zone[moveZoneNum].transform.position);
             exceptNums.Add(moveZoneNum);
@@ -145,29 +147,39 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            //Debug.DrawRay(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition) * float.MaxValue);
-            if (Physics.Raycast(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition), out RaycastHit hit, float.MaxValue, bulletCollideLayer.value))
-            {
-                if (hit.collider.tag.Equals("Player"))
-                {
-                    timewait += 0.1f;
-                    if (timewait > 1f)
-                    {
-                        readyToNextAction = true;
-                        isKeepingAction = false;
-                        StopCoroutine(hideRoutine);
-                        if (ShotOrHideDecision())
-                            aI_State = AI_State.Shot;
-                    }
-                    return;
-                }
-            }
             if (!isKeepingAction)
             {
                 //Debug.Log($"{aI_State} : Avoid Player");
                 isKeepingAction = true;
-                enemy.Wait();
-                StartCoroutine(hideRoutine);
+            }
+            else
+            {
+                if (!startActionRoutine)
+                {
+                    if (navMeshAgent.remainingDistance < 1f)
+                    {
+                        //Debug.DrawRay(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition) * float.MaxValue);
+                        if (Physics.Raycast(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition), out RaycastHit hit, float.MaxValue, bulletCollideLayer.value))
+                        {
+                            if (hit.collider.tag.Equals("Player"))
+                            {
+                                timewait += 0.1f;
+                                if (timewait > 1f)
+                                {
+                                    readyToNextAction = true;
+                                    isKeepingAction = false;
+                                    StopCoroutine(hideRoutine);
+                                    if (ShotOrHideDecision())
+                                        aI_State = AI_State.Shot;
+                                }
+                                return;
+                            }
+                        }
+
+                        startActionRoutine = true;
+                        StartCoroutine(hideRoutine);
+                    }
+                }
             }
             return;
         }
@@ -178,17 +190,21 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log($"{aI_State} : Start Hide Move");
         float timeCheck = Random.Range(1f, 3f);
         exceptNums = new();
+        enemy.Hide(true);
         while (timeCheck > 0f)
         {
             if (aI_State != AI_State.Hide)
                 break;
+
             timeCheck -= 0.1f;
             yield return new WaitForSeconds(0.1f);
         }
         //Debug.Log($"{aI_State} : End Hide Move");
         isKeepingAction = false;
         readyToNextAction = true;
+        startActionRoutine = false;
         aI_State = AI_State.Shot;
+        enemy.Hide(false);
     }
 
     void ShotMove()
@@ -206,8 +222,8 @@ public class EnemyAI : MonoBehaviour
         if (readyToNextAction)
         {
             //Debug.Log($"{aI_State} Ready to Shot");
-            timewait = 0f;
             readyToNextAction = false;
+            timewait = 0f;
             int moveZoneNum = zoneManager.Zone[zoneManager.PlayerPositionedZone].GetLeastDistancePassibleZone(transform, exceptNums);
             navMeshAgent.SetDestination(zoneManager.Zone[moveZoneNum].transform.position);
             exceptNums.Add(moveZoneNum);
@@ -230,6 +246,7 @@ public class EnemyAI : MonoBehaviour
                     return;
                 }
             }
+
             timewait += 0.1f;
             if (timewait > 1f)
             {

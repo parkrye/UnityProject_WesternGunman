@@ -97,4 +97,9 @@ public class Enemy : MonoBehaviour, IHitable
     {
         animator.SetBool("Move", false);
     }
+
+    public void Hide(bool value)
+    {
+        animator.SetBool("Hide", value);
+    }
 }
