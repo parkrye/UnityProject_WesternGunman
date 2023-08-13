@@ -14,11 +14,12 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] List<Transform> attackPositions;
     [SerializeField] EnemyBullet bulletPrefab;
     [SerializeField] List<ParticleSystem> fireFx;
+    [SerializeField] ParticleSystem bloodFx;
     [SerializeField] List<AudioSource> fireSound;
 
     [SerializeField] int avatarNum, weaponNum;
     [SerializeField] float life, attackSpeed, attackRange, attackDamage;
-    [SerializeField] bool attackable;
+    [SerializeField] bool attackable, alive;
 
     public float Life { get { return life; } }
     public float AttackSpeed { get { return attackSpeed; } }
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour, IHitable
         avatarNum = _avatarNum;
         weaponNum = _weaponNum;
 
+        alive = true;
         life = enemyData.Life;
         attackDamage = enemyData.AttackDamage;
         attackSpeed = enemyData.AttackSpeed;
@@ -55,11 +57,16 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Hit(float damage)
     {
-        Debug.Log($"{name} Hit {damage}");
-        life -= damage;
-        if(life < 0)
+        //Debug.Log($"{name} Hit {damage}");
+        bloodFx.Play();
+        if (alive)
         {
-            Dead();
+            life -= damage;
+            if (life < 0)
+            {
+                alive = false;
+                Dead();
+            }
         }
     }
 

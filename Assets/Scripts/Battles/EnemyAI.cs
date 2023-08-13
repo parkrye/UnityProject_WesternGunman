@@ -292,6 +292,7 @@ public class EnemyAI : MonoBehaviour
 
     public void StopWork()
     {
+        navMeshAgent.enabled = false;
         StopAllCoroutines();
     }
 

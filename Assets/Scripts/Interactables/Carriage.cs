@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Carriage : MonoBehaviour, IInteractable
@@ -9,6 +10,8 @@ public class Carriage : MonoBehaviour, IInteractable
     [SerializeField] List<QuestArea> questAreas;
     [SerializeField] Transform returnTransform;
     [SerializeField] List<Enemy> enemies;
+    [SerializeField] Animator questUI;
+
     public void Interact()
     {
         if(questData.QuestState == GameData.QuestState.Progress)
@@ -26,6 +29,9 @@ public class Carriage : MonoBehaviour, IInteractable
                 enemy.Initialize(player, Random.Range(0, 8), Random.Range(0, 2), questAreas[questData.AreaNum].ZoneManager, this);
                 enemies.Add(enemy);
             }
+
+            questUI.SetTrigger("ShowUI");
+            questUI.GetComponentInChildren<TMP_Text>().text = "Quest\nStart!";
         }
     }
 
@@ -41,9 +47,10 @@ public class Carriage : MonoBehaviour, IInteractable
                 Destroy(enemies[i].gameObject);
             }
 
-            player.PlayerController.SetEnableCharacterController(false);
-            player.transform.position = questAreas[questData.AreaNum].PlayerStartTransform.position;
-            player.PlayerController.SetEnableCharacterController(true);
+            questAreas[questData.AreaNum].gameObject.SetActive(false);
+            player.PlayerController.IsBattle = false;
+
+            questUI.GetComponentInChildren<TMP_Text>().text = "Quest\nClear!";
         }
     }
 }

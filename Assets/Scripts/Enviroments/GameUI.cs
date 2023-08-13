@@ -10,11 +10,15 @@ public class GameUI : MonoBehaviour
     [SerializeField] TMP_Text moneyText;
     [SerializeField] Slider armorSlider;
 
-    public void Initialize(PlayerDataManager playerDataManager)
+    public void Initialize(PlayerDataManager playerDataManager, PlayerData playerData)
     {
         playerDataManager.AddLifeEventListener(ModifyLife);
         playerDataManager.AddMoneyEventListener(ModifyMoney);
         playerDataManager.AddArmorEventListener(ModifyArmor);
+
+        ModifyLife((playerData.NowLife, playerData.MaxLife));
+        ModifyArmor((playerData.NowArmor, playerData.MaxArmor));
+        ModifyMoney(playerData.Money);
     }
 
     void ModifyLife((float, float) life)

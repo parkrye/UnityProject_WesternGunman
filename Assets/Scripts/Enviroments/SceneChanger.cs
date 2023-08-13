@@ -54,7 +54,7 @@ public class SceneChanger : MonoBehaviour
 
         playerController.Initialize();
         playerDataManager.Initialize();
-        gameUI.Initialize(playerDataManager);
+        gameUI.Initialize(playerDataManager, playerDataManager.PlayerData);
         gameUI.gameObject.SetActive(true);
     }
 }
