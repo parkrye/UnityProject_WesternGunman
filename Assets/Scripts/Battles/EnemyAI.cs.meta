@@ -3,7 +3,12 @@ guid: 3308d5c5c0cb1134ca914713a9ceb490
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemy: {instanceID: 0}
+  - questData: {fileID: 11400000, guid: 110478d63b714ce4b9fc44af665439c0, type: 2}
+  - navMeshAgent: {instanceID: 0}
+  - zoneManager: {instanceID: 0}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

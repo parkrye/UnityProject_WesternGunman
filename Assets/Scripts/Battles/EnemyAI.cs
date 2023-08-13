@@ -8,18 +8,23 @@ public class EnemyAI : MonoBehaviour
     enum AI_State { Watch, Shot, Hide }
 
     [SerializeField] Enemy enemy;
+    [SerializeField] QuestData questData;
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] ZoneManager zoneManager;
     [SerializeField] Player player;
     [SerializeField] LayerMask bulletCollideLayer;
 
     [SerializeField] AI_State aI_State;
+    [SerializeField][Range(0f, 1f)] float brave, timid;
+
     [SerializeField] int nowZone = -1;
     [SerializeField] bool readyToNextAction, isKeepingAction;
     [SerializeField] float timewait;
     [SerializeField] List<int> exceptNums;
 
-    public void Initialize(Enemy _enemy, Player _player, ZoneManager _zoneManager)
+    IEnumerator hideRoutine, shotRoutine; 
+
+    public void Initialize(Enemy _enemy, Player _player, ZoneManager _zoneManager, float _brave = -1f, float _timid = -1f)
     {
         enemy = _enemy;
         player = _player;
@@ -27,6 +32,16 @@ public class EnemyAI : MonoBehaviour
         readyToNextAction = true;
         isKeepingAction = false;
         exceptNums = new List<int>();
+
+        brave = _brave;
+        timid = _timid;
+        if(brave < 0f)
+            brave = Random.Range(0f, 1f);
+        if(timid < 0f)
+            timid = Random.Range(0f, 1f);
+
+        hideRoutine = HideRoutine();
+        shotRoutine = ShotRoutine();
 
         StartCoroutine(ActionRoutine());
     }
@@ -48,8 +63,8 @@ public class EnemyAI : MonoBehaviour
                     HideMove();
                     break;
             }
-            Debug.DrawRay(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition) * float.MaxValue);
-            yield return null;
+            //Debug.DrawRay(transform.position, (player.PlayerBodyPosotion - enemy.EnemyBodyPosition) * float.MaxValue);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -64,7 +79,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            timewait += Time.deltaTime;
+            timewait += 0.1f;
             if(timewait > 5f)
                 readyToNextAction = true;
         }
@@ -104,8 +119,8 @@ public class EnemyAI : MonoBehaviour
                 break;
             if (timeCheck > 5f)
                 break;
-            timeCheck += Time.deltaTime;
-            yield return null;
+            timeCheck += 0.1f;
+            yield return new WaitForSeconds(0.1f);
         }
         //Debug.Log($"{aI_State} : Move Over");
         readyToNextAction = true;
@@ -135,10 +150,14 @@ public class EnemyAI : MonoBehaviour
             {
                 if (hit.collider.tag.Equals("Player"))
                 {
-                    timewait += Time.deltaTime;
+                    timewait += 0.1f;
                     if (timewait > 1f)
                     {
                         readyToNextAction = true;
+                        isKeepingAction = false;
+                        StopCoroutine(hideRoutine);
+                        if (ShotOrHideDecision())
+                            aI_State = AI_State.Shot;
                     }
                     return;
                 }
@@ -148,7 +167,7 @@ public class EnemyAI : MonoBehaviour
                 //Debug.Log($"{aI_State} : Avoid Player");
                 isKeepingAction = true;
                 enemy.Wait();
-                StartCoroutine(HideRoutine());
+                StartCoroutine(hideRoutine);
             }
             return;
         }
@@ -163,8 +182,8 @@ public class EnemyAI : MonoBehaviour
         {
             if (aI_State != AI_State.Hide)
                 break;
-            timeCheck -= Time.deltaTime;
-            yield return null;
+            timeCheck -= 0.1f;
+            yield return new WaitForSeconds(0.1f);
         }
         //Debug.Log($"{aI_State} : End Hide Move");
         isKeepingAction = false;
@@ -206,12 +225,12 @@ public class EnemyAI : MonoBehaviour
                         //Debug.Log($"{aI_State} : Meet Player");
                         isKeepingAction = true;
                         enemy.Wait();
-                        StartCoroutine(ShotRoutine());
+                        StartCoroutine(shotRoutine);
                     }
                     return;
                 }
             }
-            timewait += Time.deltaTime;
+            timewait += 0.1f;
             if (timewait > 1f)
             {
                 //Debug.Log($"{aI_State} Time Over");
@@ -238,7 +257,42 @@ public class EnemyAI : MonoBehaviour
         isKeepingAction = false;
         readyToNextAction = true;
         //Debug.Log($"{aI_State} : End Shot ");
-        aI_State = AI_State.Hide;
+        if (!ShotOrHideDecision())
+            aI_State = AI_State.Hide;
+    }
+
+    bool ShotOrHideDecision()
+    {
+        float shotPoint = 0f, hidePoint = 0f;
+
+        if (questData.EnemyKilled <= questData.EnemyCount * 0.5f)
+            hidePoint += questData.EnemyKilled;
+        else
+            shotPoint += questData.EnemyCount - questData.EnemyKilled;
+
+        if(player.PlayerDataManager.PlayerData.NowLife <= player.PlayerDataManager.PlayerData.MaxLife * 0.5f)
+            shotPoint += (player.PlayerDataManager.PlayerData.MaxLife - player.PlayerDataManager.PlayerData.NowLife) * 0.1f;
+        else
+            hidePoint += player.PlayerDataManager.PlayerData.NowLife * 0.1f;
+
+        if(player.PlayerDataManager.PlayerData.NowArmor <= player.PlayerDataManager.PlayerData.MaxArmor * 0.5f)
+            shotPoint += (player.PlayerDataManager.PlayerData.MaxArmor - player.PlayerDataManager.PlayerData.NowArmor) * 0.1f;
+        else
+            hidePoint += (player.PlayerDataManager.PlayerData.NowArmor * 0.1f);
+
+        shotPoint += player.PlayerDataManager.PlayerData.Money > 100 ? 10 : player.PlayerDataManager.PlayerData.Money * 0.1f;
+
+        shotPoint *= brave;
+        hidePoint *= timid;
+
+        if(Random.Range(0f, shotPoint + hidePoint) < shotPoint)
+            return true;
+        return false;
+    }
+
+    public void StopWork()
+    {
+        StopAllCoroutines();
     }
 
     void OnTriggerEnter(Collider other)

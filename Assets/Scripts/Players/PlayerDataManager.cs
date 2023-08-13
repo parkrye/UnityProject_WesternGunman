@@ -6,6 +6,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
     [SerializeField] Player player;
     [SerializeField] PlayerData playerData;
     public int Money { get { return playerData.Money; } set { playerData.Money = value; moneyEvent?.Invoke(playerData.Money); } }
+    public PlayerData PlayerData { get {  return playerData; } }
 
     UnityEvent<(float, float)> lifeEvent, armorEvent;
     UnityEvent<int> moneyEvent;

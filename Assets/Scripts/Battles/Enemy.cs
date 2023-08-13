@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour, IHitable
 {
     [SerializeField] EnemyData enemyData;
     [SerializeField] EnemyAI enemyAI;
+    [SerializeField] Carriage carriage;
 
     [SerializeField] Animator animator;
     [SerializeField] List<GameObject> avatars;
@@ -25,8 +26,9 @@ public class Enemy : MonoBehaviour, IHitable
     public float AttackDamage { get { return attackDamage; } }
     public Vector3 EnemyBodyPosition { get { return (transform.position + Vector3.up); } }
 
-    public void Initialize(Player _player, int _avatarNum, int _weaponNum, ZoneManager zoneManager)
+    public void Initialize(Player _player, int _avatarNum, int _weaponNum, ZoneManager zoneManager, Carriage _carriage)
     {
+        carriage = _carriage;
         player = _player;
         avatarNum = _avatarNum;
         weaponNum = _weaponNum;
@@ -53,7 +55,7 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Hit(float damage)
     {
-        //Debug.Log($"{name} Hit {damage}");
+        Debug.Log($"{name} Hit {damage}");
         life -= damage;
         if(life < 0)
         {
@@ -63,7 +65,11 @@ public class Enemy : MonoBehaviour, IHitable
 
     public void Dead()
     {
+        animator.SetInteger("DeadPose", Random.Range(0, 4));
+        animator.SetTrigger("Die");
+        enemyAI.StopWork();
         StopAllCoroutines();
+        carriage.OnEnemyDied();
     }
 
     public void Shot()

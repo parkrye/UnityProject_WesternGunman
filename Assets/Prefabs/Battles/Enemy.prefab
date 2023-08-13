@@ -2038,9 +2038,9 @@ GameObject:
   - component: {fileID: 4279612548382998362}
   - component: {fileID: 2840177207599248914}
   - component: {fileID: 5155454235360383556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2104,6 +2104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8290fdd2f0792d64da1741af359bb210, type: 2}
   enemyAI: {fileID: 2682401202838303235}
+  carriage: {fileID: 0}
   animator: {fileID: 95217205003396926}
   avatars:
   - {fileID: 1577183957498094}
@@ -2149,6 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1096605688598660496}
+  questData: {fileID: 11400000, guid: 110478d63b714ce4b9fc44af665439c0, type: 2}
   navMeshAgent: {fileID: 5155454235360383556}
   zoneManager: {fileID: 0}
   player: {fileID: 0}
@@ -2156,6 +2158,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   aI_State: 0
+  brave: 0
+  timid: 0
   nowZone: -1
   readyToNextAction: 0
   isKeepingAction: 0

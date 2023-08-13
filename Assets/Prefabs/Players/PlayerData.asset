@@ -16,6 +16,6 @@ MonoBehaviour:
   maxLife: 10
   nowArmor: 0
   maxArmor: 10
-  money: 0
+  money: 10
   maxLifeCounter: 0
   maxArmorCounter: 0
