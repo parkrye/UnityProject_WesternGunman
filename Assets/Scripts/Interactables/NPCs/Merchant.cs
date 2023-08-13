@@ -33,15 +33,15 @@ public class Merchant : NPC
     {
         costs = new Dictionary<string, int>
         {
-            { "NowHP", 15 * (int)(playerData.MaxLife - playerData.NowLife) },
+            { "NowHP", 5 * (int)(playerData.MaxLife - playerData.NowLife) },
             { "MaxHP", 15 + 15 * playerData.MaxLifeCounter },
-            { "NowArmor", 15 * (int)(playerData.MaxArmor - playerData.NowArmor) },
+            { "NowArmor", 5 * (int)(playerData.MaxArmor - playerData.NowArmor) },
             { "MaxArmor", 15 + 15 * playerData.MaxArmorCounter }
         };
 
-        uIBase.texts["HPNowText"].text = $"${costs["NowHP"]}";
+        uIBase.texts["HPNowText"].text = $"$~{costs["NowHP"]}";
         uIBase.texts["HPMaxText"].text = $"${costs["MaxHP"]}";
-        uIBase.texts["ArmorNowText"].text = $"${costs["NowArmor"]}";
+        uIBase.texts["ArmorNowText"].text = $"$~{costs["NowArmor"]}";
         uIBase.texts["ArmorMaxText"].text = $"${costs["MaxArmor"]}";
     }
 
@@ -53,6 +53,15 @@ public class Merchant : NPC
             {
                 playerDataManager.Money -= costs["NowHP"];
                 playerDataManager.Heal(playerData.MaxLife);
+                SettingUICost();
+            }
+            else
+            {
+                while(playerDataManager.Money >= 5)
+                {
+                    playerDataManager.Money -= 5;
+                    playerDataManager.Heal(5);
+                }
                 SettingUICost();
             }
         }
@@ -75,6 +84,15 @@ public class Merchant : NPC
             {
                 playerDataManager.Money -= costs["NowArmor"];
                 playerDataManager.AddArmor(playerData.MaxArmor);
+                SettingUICost();
+            }
+            else
+            {
+                while (playerDataManager.Money >= 5)
+                {
+                    playerDataManager.Money -= 5;
+                    playerDataManager.AddArmor(5);
+                }
                 SettingUICost();
             }
         }
