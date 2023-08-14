@@ -45,14 +45,14 @@ public class Zone : MonoBehaviour
     {
         int leastDistanceIndex = 0;
         float leastDistance = float.MaxValue;
-        for(int i = 0; i < passibleZone.Count; i++)
+        for (int i = 0; i < passibleZone.Count; i++)
         {
             if(exceptNums.Count > 0)
             {
                 bool pass = false;
                 for(int j = 0; j < exceptNums.Count; j++)
                 {
-                    if(i == j)
+                    if (passibleZone[i].ZoneNumber == exceptNums[j])
                     {
                         pass = true;
                     }
@@ -84,7 +84,7 @@ public class Zone : MonoBehaviour
                 bool pass = false;
                 for (int j = 0; j < exceptNums.Count; j++)
                 {
-                    if (i == j)
+                    if (blockedZone[i].ZoneNumber == exceptNums[j])
                     {
                         pass = true;
                     }
