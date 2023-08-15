@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveCharacterController(Vector3 movePosition)
     {
+        Instantiate(Resources.Load("BlockImage"));
         SetEnableCharacterController(false);
         player.transform.position = movePosition;
         SetEnableCharacterController(true);

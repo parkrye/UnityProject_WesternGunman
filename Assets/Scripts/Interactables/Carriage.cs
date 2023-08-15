@@ -11,9 +11,16 @@ public class Carriage : MonoBehaviour, IInteractable
     [SerializeField] Transform returnTransform;
     [SerializeField] List<Enemy> enemies;
     [SerializeField] Animator questUI;
+    [SerializeField] bool eventAdded;
 
     public void Interact()
     {
+        if (!eventAdded)
+        {
+            eventAdded = true;
+            player.PlayerDataManager.AddLifeEventListener(PlayerDied);
+        }
+
         if(questData.QuestState == GameData.QuestState.Progress)
         {
             questAreas[questData.AreaNum].gameObject.SetActive(true);
@@ -33,22 +40,34 @@ public class Carriage : MonoBehaviour, IInteractable
         }
     }
 
+    void PlayerDied((float, float) life)
+    {
+        if(questData.QuestState == GameData.QuestState.Progress)
+        {
+            if(life.Item1 <= 0f)
+                EndQuest();
+        }
+    }
+
     public void OnEnemyDied()
     {
         questData.EnemyKilled++;
         if(questData.EnemyKilled == questData.EnemyCount)
         {
             questData.QuestState = GameData.QuestState.Clear;
-
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                Destroy(enemies[i].gameObject);
-            }
-
-            questAreas[questData.AreaNum].gameObject.SetActive(false);
-            player.PlayerController.IsBattle = false;
-
+            EndQuest();
             questUI.GetComponentInChildren<TMP_Text>().text = "Quest\nClear!";
         }
+    }
+
+    public void EndQuest()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Destroy(enemies[i].gameObject);
+        }
+
+        questAreas[questData.AreaNum].gameObject.SetActive(false);
+        player.PlayerController.IsBattle = false;
     }
 }

@@ -5,6 +5,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 {
     [SerializeField] Player player;
     [SerializeField] PlayerData playerData;
+    [SerializeField] QuestData questData;
     public int Money { get { return playerData.Money; } set { playerData.Money = value; moneyEvent?.Invoke(playerData.Money); } }
     public PlayerData PlayerData { get {  return playerData; } }
 
@@ -30,6 +31,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
         if(playerData.NowLife < 0)
         {
             playerData.NowLife = 0;
+            Dead();
         }
 
         lifeEvent.Invoke((playerData.NowLife, playerData.MaxLife));
@@ -38,7 +40,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
 
     public void Dead()
     {
-
+        playerData.Money -= (int)(playerData.Money * 0.5f);
     }
 
     public void Heal(float heal, float maxLife = 0f)

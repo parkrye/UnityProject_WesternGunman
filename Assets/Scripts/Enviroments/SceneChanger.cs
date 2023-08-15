@@ -42,8 +42,6 @@ public class SceneChanger : MonoBehaviour
 
         titleCam.Priority = 0;
 
-        npcInitializer.Initialize(playerController);
-
         Volume titleVolume = titleCam.GetComponent<Volume>();
         for(int i = 0; i < 10; i++)
         {
@@ -53,6 +51,7 @@ public class SceneChanger : MonoBehaviour
 
         playerController.Initialize();
         playerDataManager.Initialize();
+        npcInitializer.Initialize(playerController);
         gameUI.Initialize(playerDataManager, playerDataManager.PlayerData);
         gameUI.gameObject.SetActive(true);
     }

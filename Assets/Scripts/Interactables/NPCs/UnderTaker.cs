@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnderTaker : NPC
 {
+    [SerializeField] Transform respawnTransform;
     public override void Initialize(PlayerController _player)
     {
         base.Initialize(_player);
@@ -12,6 +11,7 @@ public class UnderTaker : NPC
         talks.Add("Be...Quiet...");
         talks.Add("Why...?");
         talks.Add("Close...That...Door...");
+        playerController.GetComponent<PlayerDataManager>().AddLifeEventListener(PlayerDied);
     }
 
     public override void Interact()
@@ -19,5 +19,11 @@ public class UnderTaker : NPC
         base.Interact();
         playerController.ControllOut();
         playerController.HideUI();
+    }
+
+    void PlayerDied((float, float) life)
+    {
+        if (life.Item1 <= 0f)
+            playerController.MoveCharacterController(respawnTransform.position);
     }
 }
