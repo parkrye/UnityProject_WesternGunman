@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -35,9 +36,16 @@ public class Carriage : MonoBehaviour, IInteractable
                 enemies.Add(enemy);
             }
 
-            questUI.SetTrigger("ShowUI");
+            StartCoroutine(ShowUIRoutine());
             questUI.GetComponentInChildren<TMP_Text>().text = "Quest\nStart!";
         }
+    }
+
+    IEnumerator ShowUIRoutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        questUI.SetTrigger("ShowUI");
     }
 
     void PlayerDied((float, float) life)
