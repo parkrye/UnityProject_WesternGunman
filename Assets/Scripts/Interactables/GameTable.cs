@@ -461,6 +461,7 @@ public class GameTable : NPC
     public void OnStayButtonclicked()
     {
         playing = false;
+        playerDie = true;
     }
 
     void CreateDeck()
