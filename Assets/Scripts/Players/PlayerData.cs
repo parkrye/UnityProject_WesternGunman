@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "PlayerData", menuName = "Data/PlayerData")]
 public class PlayerData : ScriptableObject
 {
     [SerializeField] float nowLife, maxLife, nowArmor, maxArmor;
-    [SerializeField] int money, maxLifeCounter, maxArmorCounter;
+    [SerializeField] int money, maxLifeCounter, maxArmorCounter, materialNum;
 
     public float NowLife { get { return nowLife; } set { nowLife = value; } }
     public float MaxLife { get { return maxLife; } set { maxLife = value; } }
@@ -14,4 +13,5 @@ public class PlayerData : ScriptableObject
     public float MaxArmor { get { return maxArmor; } set { maxArmor = value; } }
     public int MaxLifeCounter { get { return maxLifeCounter; } set { maxLifeCounter = value; } }
     public int MaxArmorCounter { get { return maxArmorCounter; } set { maxArmorCounter = value; } }
+    public int MaterialNum { get { return materialNum; } set {  materialNum = value; } }
 }

@@ -8,6 +8,7 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
     [SerializeField] QuestData questData;
     public int Money { get { return playerData.Money; } set { playerData.Money = value; moneyEvent?.Invoke(playerData.Money); } }
     public PlayerData PlayerData { get {  return playerData; } }
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
 
     UnityEvent<(float, float)> lifeEvent, armorEvent;
     UnityEvent<int> moneyEvent;
@@ -66,6 +67,11 @@ public class PlayerDataManager : MonoBehaviour, IHitable, IHealable
     public (float, float) GetArmor()
     {
         return (playerData.NowArmor, playerData.MaxArmor);
+    }
+
+    public void ChangeAvatarMaterial(Material material)
+    {
+        skinnedMeshRenderer.material = material;
     }
 
     public void AddLifeEventListener(UnityAction<(float, float)> listener)

@@ -11,6 +11,8 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerDataManager playerDataManager;
     [SerializeField] NPCInitializer npcInitializer;
+    [SerializeField] PlayerAvaterMaterialManager playerAvaterMaterialManager;
+    [SerializeField] PlayerPortrait playerPortrait;
 
     void Awake()
     {
@@ -51,8 +53,13 @@ public class SceneChanger : MonoBehaviour
 
         playerController.Initialize();
         playerDataManager.Initialize();
+        playerAvaterMaterialManager.Initialize();
         npcInitializer.Initialize(playerController);
         gameUI.Initialize(playerDataManager, playerDataManager.PlayerData);
         gameUI.gameObject.SetActive(true);
+
+        playerAvaterMaterialManager.AddMaterialChangedEventListener(playerDataManager.ChangeAvatarMaterial);
+        playerAvaterMaterialManager.AddMaterialChangedEventListener(playerPortrait.ChangeMaterial);
+        playerAvaterMaterialManager.MaterialNum = playerDataManager.PlayerData.MaterialNum;
     }
 }

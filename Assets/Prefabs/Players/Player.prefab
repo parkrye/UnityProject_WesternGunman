@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3178524619251993245}
   playerData: {fileID: 11400000, guid: 57fd56a5241d63f41a68f015e444b1ec, type: 2}
+  questData: {fileID: 0}
 --- !u!114 &3676150969155552557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +669,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 137303423537796088, guid: e169e4d9dbd157b498e582065a5f9302,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 66a8a6e30880caa48908020cf5388217, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
 --- !u!95 &3320031332484233290 stripped
