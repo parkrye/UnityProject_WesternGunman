@@ -9,7 +9,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Transform fireTransform;
     [SerializeField] protected LayerMask targetLayerMask;
 
-    [SerializeField] protected WeaponData weaponData;
+    [SerializeField] public WeaponData weaponData;
 
     public float Attack()
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotGun
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 5
+  speed: 1
   range: 50
   damageUpgradeCount: 0
   speedUpgradeCount: 0

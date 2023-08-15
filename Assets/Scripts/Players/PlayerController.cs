@@ -260,7 +260,7 @@ public class PlayerController : MonoBehaviour
                     weapons[nowWeapon].WeaponOff();
                 nowWeapon = 1;
                 weapons[nowWeapon].WeaponOn();
-                animator.SetFloat("ReloadSpeed", 1f);
+                animator.SetFloat("ReloadSpeed", 1f * weapons[nowWeapon].weaponData.Speed);
                 dot.SetActive(true);
             }
             animator.SetFloat("Weapon", nowWeapon * 0.5f);
@@ -283,7 +283,7 @@ public class PlayerController : MonoBehaviour
                     weapons[nowWeapon].WeaponOff();
                 nowWeapon = 2;
                 weapons[nowWeapon].WeaponOn();
-                animator.SetFloat("ReloadSpeed", 0.3f);
+                animator.SetFloat("ReloadSpeed", 0.3f * weapons[nowWeapon].weaponData.Speed);
                 dot.SetActive(true);
             }
             animator.SetFloat("Weapon", nowWeapon * 0.5f);

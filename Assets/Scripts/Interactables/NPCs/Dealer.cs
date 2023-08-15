@@ -66,7 +66,7 @@ public class Dealer : NPC
         if (playerDataManager.Money >= costs[((GameData.Gun)gunNum, 1)])
         {
             playerDataManager.Money -= costs[((GameData.Gun)gunNum, 1)];
-            weaponDatas[gunNum].Speed *= 0.9f;
+            weaponDatas[gunNum].Speed *= 1.1f;
             weaponDatas[gunNum].SpeedUpgradeCount++;
             SettingUICost();
         }
