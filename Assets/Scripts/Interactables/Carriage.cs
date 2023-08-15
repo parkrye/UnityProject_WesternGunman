@@ -17,9 +17,7 @@ public class Carriage : MonoBehaviour, IInteractable
         if(questData.QuestState == GameData.QuestState.Progress)
         {
             questAreas[questData.AreaNum].gameObject.SetActive(true);
-            player.PlayerController.SetEnableCharacterController(false);
-            player.transform.position = questAreas[questData.AreaNum].PlayerStartTransform.position;
-            player.PlayerController.SetEnableCharacterController(true);
+            player.PlayerController.MoveCharacterController(questAreas[questData.AreaNum].PlayerStartTransform.position);
             player.PlayerController.IsBattle = true;
             questData.EnemyKilled = 0;
             enemies = new();

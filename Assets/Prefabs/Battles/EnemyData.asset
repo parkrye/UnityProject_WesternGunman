@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 10
   attackSpeed: 5
-  attackRange: 50
+  attackRange: 40
   attackDamage: 2

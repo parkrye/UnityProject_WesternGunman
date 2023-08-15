@@ -41,7 +41,6 @@ public class SceneChanger : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         titleCam.Priority = 0;
-        gameCam.Priority = 10;
 
         npcInitializer.Initialize(playerController);
 

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808df8524845e6d4daaee3502ee331e2, type: 3}
   m_Name: QuestData
   m_EditorClassIdentifier: 
-  enemyCount: 0
+  enemyCount: 1
   enemyKilled: 0
-  pay: 0
+  pay: 175
   areaNum: 0
-  questState: 0
+  questState: 1

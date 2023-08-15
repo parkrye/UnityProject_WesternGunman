@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 5
-  range: 150
+  range: 50
   damageUpgradeCount: 0
   speedUpgradeCount: 0
   rangeUpgradeCount: 0

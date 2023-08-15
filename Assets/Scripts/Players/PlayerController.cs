@@ -146,6 +146,18 @@ public class PlayerController : MonoBehaviour
         characterController.enabled = value;
     }
 
+    public void MoveCharacterController(Vector3 movePosition)
+    {
+        SetEnableCharacterController(false);
+        player.transform.position = movePosition;
+        SetEnableCharacterController(true);
+    }
+
+    public void SitAnimation(bool value)
+    {
+        animator.SetBool("SitDown", value);
+    }
+
     void OnMoveInput(InputValue inputValue)
     {
         Vector2 tmpVector = inputValue.Get<Vector2>();
