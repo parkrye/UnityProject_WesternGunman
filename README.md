@@ -2,6 +2,10 @@
 
 서부 마을의 보안관이 되어 의뢰를 받고 무법자를 처치하는 3D 액션 게임 (Unity · URP, 2023).
 
+## 영상
+
+[![플레이 영상](https://img.youtube.com/vi/473K7-S3Ueo/hqdefault.jpg)](https://youtu.be/473K7-S3Ueo)
+
 ## 마을
 
 | NPC | 역할 |
